@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	setTimeout(() => {
 		document.getElementById('search-bar').classList.add("fade-in");
 		document.getElementsByTagName('h1')[0].removeChild(document.getElementById('cursor'));
+		document.getElementById('search-bar').focus();
 	}, delay);
 
 	var typeTimer = null;
@@ -25,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		clearTimeout(typeTimer);
 		clearTimeout(resultTimer);
 
-  typeTimer = setTimeout(() => {
+		typeTimer = setTimeout(() => {
 			if ((e.keyCode >= 48 && e.keyCode <= 90) || e.keyCode >= 186) {
 				//eventually refactor to create function that generates regex and replicates functionality
 				if (/^a((b|(bo)|(bou)|(bout))?)$/.test(this.value)) {
@@ -48,21 +49,29 @@ document.addEventListener("DOMContentLoaded", () => {
 					this.setSelectionRange(start, 8);
 					this.focus();
 				}
-
 			}
+
 			switch (this.value) {
 				case "about":
+					document.getElementById('projects').classList.remove('expand');
+					document.getElementById('resume').classList.remove('expand-resume');
 					resultTimer = setTimeout(() => document.getElementById('about').classList.add('expand'), 250);
 					break;
-        case "projects":
-  				resultTimer = setTimeout(() => document.getElementById('projects').classList.add('expand'), 250);
-  				break;
-        default:
+				case "projects":
 					document.getElementById('about').classList.remove('expand');
-          document.getElementById('projects').classList.remove('expand');
-          break;
+					document.getElementById('resume').classList.remove('expand-resume');
+					resultTimer = setTimeout(() => document.getElementById('projects').classList.add('expand'), 250);
+					break;
+				case "resume":
+					document.getElementById('about').classList.remove('expand');
+					document.getElementById('projects').classList.remove('expand');
+					resultTimer = setTimeout(() => document.getElementById('resume').classList.add('expand-resume'), 250);
+				default:
+					document.getElementById('about').classList.remove('expand');
+					document.getElementById('projects').classList.remove('expand');
+					document.getElementById('resume').classList.remove('expand-resume');
+					break;
 			}
-
 			var headerText = document.getElementById('header-text');
 
 			if (this.value) {
