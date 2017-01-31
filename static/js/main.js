@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 		typeTimer = setTimeout(() => {
 			if ((e.keyCode >= 48 && e.keyCode <= 90) || e.keyCode >= 186) {
+				console.log(e.keyCode);
 				//eventually refactor to create function that generates regex and replicates functionality
 				if (/^a((b|(bo)|(bou)|(bout))?)$/.test(this.value)) {
 					var start = this.value.length;
@@ -66,6 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
 					document.getElementById('about').classList.remove('expand');
 					document.getElementById('projects').classList.remove('expand');
 					resultTimer = setTimeout(() => document.getElementById('resume').classList.add('expand-resume'), 250);
+					break;
 				default:
 					document.getElementById('about').classList.remove('expand');
 					document.getElementById('projects').classList.remove('expand');

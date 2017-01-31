@@ -1,29 +1,49 @@
-/*@import url('https://fonts.googleapis.com/css?family=Raleway:100');
-@import url('https://fonts.googleapis.com/css?family=Raleway:200');*/
+@font-face {
+    font-family: "Raleway-Light";
+    src: url("../fonts/Raleway-Light.ttf");
+}
 
-@font-face {
-  font-family: "Font-Regular";
-  src: url("../fonts/Raleway/Raleway-Regular.ttf"); }
-@font-face {
-  font-family: "Font-Thin";
-  src: url("../fonts/Raleway/Raleway-Thin.ttf"); }
-@font-face {
-  font-family: "Font-Bold";
-  src: url("../fonts/Raleway/Raleway-Bold.ttf"); }
-  @font-face {
-    font-family: "Font-Light";
-    src: url("../fonts/Raleway/Raleway-Light.ttf"); }
+@media only screen and (min-width: 993px) {
+    :root {
+        --width: 800px;
+    }
 
-:root {
-    --width: 600px;
+    h1{
+      font-size: 110% !important;
+    }
+
+    h2{
+      font-size:150% !important;
+    }
+
+    input{
+      font-size: 180% !important;
+    }
+}
+
+@media only screen and (max-width: 992px) and (min-width: 769px) {
+    :root {
+        --width: 700px;
+    }
+}
+
+@media only screen and (max-width: 768px) and (min-width: 481px) {
+     :root {
+        --width: 600px;
+    }
+}
+
+@media only screen and (max-width: 480px) and (min-width: 0) {
+    :root {
+        --width: 350px;
+    }
 }
 
 html, body {
     margin: 0;
     height: 100%;
     width: 100%;
-    font-family: 'Font-Light', sans-serif;
-    letter-spacing: 0.1em;
+    font-family: 'Raleway-Light';
 }
 
 #container {
@@ -35,19 +55,26 @@ html, body {
     justify-content: center;
 }
 
+
+/*header related styling*/
+
 h1 {
     font-size: 100%;
-    font-weight: 200;
     text-align: left;
     margin: 0;
+    font-weight: normal;
+    letter-spacing: 0.1em;
 }
 
 #header-text {
     transition: opacity 0.25s;
 }
 
+
+/*search bar related styling*/
+
 input {
-    font-size: 175%;
+    font-size: 160%;
     border-style: none none solid none;
     border-bottom-width: thin;
     border-bottom-color: #e6e6e6;
@@ -55,6 +82,7 @@ input {
     width: 100%;
     padding: 0.1em;
     opacity: 0;
+    text-overflow: ellipsis;
     transition: opacity 0.75s;
 }
 
@@ -62,18 +90,18 @@ input {
     width: var(--width);
 }
 
+
+/*about & projects section related styling*/
+
+h2 {
+    font-weight: normal;
+    font-size: 140%;
+}
+
 #about, #projects {
     width: var(--width);
     opacity: 0;
     max-height: 0;
-}
-
-#resume {
-    width: 100%;
-    opacity: 0;
-    max-height: 0;
-    height: 80%;
-    transition: max-height 1s, opacity 0.5s;
 }
 
 .expand {
@@ -86,15 +114,33 @@ input {
     transition: max-height 1s, opacity 1s;
 }
 
+
+/*resume section related styling*/
+
+#resume {
+    width: 100%;
+    opacity: 0;
+    max-height: 0;
+    height: 80%;
+    transition: max-height 1s, opacity 0.5s;
+}
+
 .expand-resume {
     opacity: 1 !important;
     max-height: 100% !important;
 }
 
-#resume:not(.expand-resume){
+#resume:not(.expand-resume) {}
 
+iframe {
+    height: 100%;
+    width: 100%;
+    border-style: none;
+    transform: scaleY(0.9);
 }
 
+
+/*cursor related styling*/
 @keyframes blink {
     50% {
         opacity: 0;
@@ -106,6 +152,7 @@ input {
     animation: blink 0.75s step-end infinite;
 }
 
+/*misc. styling*/
 .fade-in {
     opacity: 1;
 }
@@ -117,20 +164,4 @@ input {
 *::selection {
     background-color: black;
     color: white;
-}
-
-#modal {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    z-index: 1;
-}
-
-iframe {
-    height: 100%;
-    width: 100%;
-    border-style: none;
-    transform: scaleY(0.9);
 }
