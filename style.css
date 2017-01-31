@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:100');
+@import url('https://fonts.googleapis.com/css?family=Raleway:200');
+
+:root{
+  --width: 600px;
+}
+html, body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 200;
+    letter-spacing: 0.1em;
+}
+
+#container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 100%;
+    font-weight: 200;
+    text-align: left;
+    margin: 0;
+}
+
+#header-text{
+  transition: opacity 0.25s;
+}
+
+input {
+    font-size: 175%;
+    border-style: none none solid none;
+    border-bottom-width: thin;
+    border-bottom-color: #e6e6e6;
+    outline: none;
+    width: 100%;
+    padding: 0.1em;
+    opacity: 0;
+    transition: opacity 0.75s;
+}
+
+#search-bar {
+    width: var(--width);
+}
+
+#about, #projects{
+  width: var(--width);
+  opacity: 0;
+  max-height: 0;
+}
+
+.expand{
+  opacity: 1 !important;
+  max-height: 100% !important;
+  transition: max-height 2s, opacity 2s;
+}
+
+#about, #projects:not(.expand){
+  transition: max-height 1s, opacity 1s;
+}
+
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+#cursor {
+    font-weight: 100;
+    animation: blink 0.75s step-end infinite;
+}
+
+.fade-in {
+    opacity: 1;
+}
+
+.fade-out{
+  opacity: 0;
+}
+
+*::selection {
+    background-color: black;
+    color: white;
+}
