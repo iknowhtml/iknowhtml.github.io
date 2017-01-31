@@ -68,6 +68,7 @@
 		setTimeout(function () {
 			document.getElementById('search-bar').classList.add("fade-in");
 			document.getElementsByTagName('h1')[0].removeChild(document.getElementById('cursor'));
+			document.getElementById('search-bar').focus();
 		}, delay);
 
 		var typeTimer = null;
@@ -82,6 +83,7 @@
 
 			typeTimer = setTimeout(function () {
 				if (e.keyCode >= 48 && e.keyCode <= 90 || e.keyCode >= 186) {
+					console.log(e.keyCode);
 					//eventually refactor to create function that generates regex and replicates functionality
 					if (/^a((b|(bo)|(bou)|(bout))?)$/.test(_this.value)) {
 						var start = _this.value.length;
@@ -104,23 +106,35 @@
 						_this.focus();
 					}
 				}
+
 				switch (_this.value) {
 					case "about":
+						document.getElementById('projects').classList.remove('expand');
+						document.getElementById('resume').classList.remove('expand-resume');
 						resultTimer = setTimeout(function () {
 							return document.getElementById('about').classList.add('expand');
 						}, 250);
 						break;
 					case "projects":
+						document.getElementById('about').classList.remove('expand');
+						document.getElementById('resume').classList.remove('expand-resume');
 						resultTimer = setTimeout(function () {
 							return document.getElementById('projects').classList.add('expand');
+						}, 250);
+						break;
+					case "resume":
+						document.getElementById('about').classList.remove('expand');
+						document.getElementById('projects').classList.remove('expand');
+						resultTimer = setTimeout(function () {
+							return document.getElementById('resume').classList.add('expand-resume');
 						}, 250);
 						break;
 					default:
 						document.getElementById('about').classList.remove('expand');
 						document.getElementById('projects').classList.remove('expand');
+						document.getElementById('resume').classList.remove('expand-resume');
 						break;
 				}
-
 				var headerText = document.getElementById('header-text');
 
 				if (_this.value) {
