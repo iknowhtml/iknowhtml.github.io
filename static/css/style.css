@@ -154,7 +154,7 @@ iframe {
 
 /*misc. styling*/
 .fade-in {
-    opacity: 1;
+    opacity: 1 !important;
 }
 
 .fade-out {

@@ -5,7 +5,7 @@
 
 body {
     font-family: "Font-Regular";
-    background-color: #F0F0F0;
+    /*background-color: #F0F0F0;*/
     font-size: 90%;
     line-height: 165%;
 }
@@ -36,7 +36,7 @@ body {
 
 .container {
     background-color: white;
-    box-shadow: 0 0 6px #ccc;
+    /*box-shadow: 0 0 6px #ccc;*/
 }
 
 .cv-wrapper {

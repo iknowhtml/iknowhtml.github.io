@@ -3,8 +3,8 @@ import {addDOMListener, removeDomListener} from './dom-listener';
 
 document.addEventListener("DOMContentLoaded", () => {
 	var texts = ["Hi, I'm Aki.", "This is my website.", "Learn more about me below."];
-	var interval = 100;
-	var textDelay = 500;;
+	var interval = 80;
+	var textDelay = 500;
 	type("header-text", interval, texts, textDelay);
 
 	var delay = textDelay * texts.length - 1;

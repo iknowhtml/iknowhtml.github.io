@@ -12,15 +12,15 @@ function type(id, interval, values, textDelay){
     //calculating delay due to typing different sentences being asynchronous
     delay += interval * texts[i].length + textDelay;
   }
-  var textIndex = 1;
+  var textIndex = 0;
   repeat(() => {
-    if(textsIndex != 0 && textIndex == 1){
+    if(textsIndex != 0 && textIndex == 0){
       document.getElementById(id).innerHTML = document.getElementById(id).innerHTML + " ";
 
     }
-    document.getElementById(id).innerHTML = document.getElementById(id).innerHTML + text[textIndex - 1];
+    document.getElementById(id).innerHTML = document.getElementById(id).innerHTML + text[textIndex];
     textIndex++;
-  } , 100, text.length, delay);
+  } , interval, text.length, delay);
   });
 }
 
