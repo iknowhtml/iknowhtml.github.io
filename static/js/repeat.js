@@ -1,17 +1,22 @@
 var repeat = (callback, interval, repetitions, delay) => {
+  var expected = Date.now();
   function repeater(repetitions){
     if(repetitions != 0){
-      callback.apply(null, arguments);
-      setTimeout(() => repeater(repetitions - 1)
-      , interval);
+      var dt = Date.now() - expected;
+      var pause = callback.apply(null, arguments);
+      if(pause){
+        expected += delay;
+        setTimeout(() => repeater(repetitions - 1)
+        , delay - dt);
+      }
+      else{
+        expected += interval;
+        setTimeout(() => repeater(repetitions - 1)
+        , interval - dt);
+      }
     }
   }
-  if(delay){
-    setTimeout(() => repeater(repetitions), delay);
-  }
-  else{
-    repeater(repetitions);
-  }
+  repeater(repetitions);
 }
 
 export default repeat;

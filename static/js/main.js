@@ -2,15 +2,13 @@ import type from './type';
 import {addDOMListener, removeDomListener} from './dom-listener';
 
 document.addEventListener("DOMContentLoaded", () => {
-	var texts = ["Hi, I'm Aki.", "This is my website.", "Learn more about me below."];
-	var interval = 80;
-	var textDelay = 500;
-	type("header-text", interval, texts, textDelay);
+	var text = "Hi, I'm Aki. This is my website. Learn more about me below.";
+	var interval = 50;
+	var textDelay = 250;
 
-	var delay = textDelay * texts.length - 1;
-	for (let i = 0; i < texts.length; i++) {
-		delay += interval * (texts[i].length);
-	}
+	var delay = interval * text.length + text.match(/(\w\.$)|(\w\. )/g).length * textDelay;
+
+	type("header-text", interval, text, textDelay);
 	//fades search bar in and removes cursor from dom
 	setTimeout(() => {
 		document.getElementById('search-bar').classList.add("fade-in");

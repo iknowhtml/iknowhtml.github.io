@@ -139,6 +139,35 @@ iframe {
     transform: scaleY(0.9);
 }
 
+h3{
+  font-size: 125%;
+  text-align: center;
+  margin: 0;
+}
+
+a{
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:after{
+  content:'';
+  display: block;
+  margin: auto;
+  width: 0%;
+  height: 1px;
+  background: transparent;
+  transition: background 0.125s, width 0.125s;
+}
+
+a:hover:after{
+  background: black;
+  width:100%;
+}
+
+a:visited{
+  color: black
+}
 
 /*cursor related styling*/
 @keyframes blink {
