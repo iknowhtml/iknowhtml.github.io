@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --progress --inline"
+    "start": "webpack-dev-server --progress --inline",
+    "deploy": "git checkout master && git merge dev && git push origin master"
   },
   "author": "Aki Gao",
   "license": "ISC",
