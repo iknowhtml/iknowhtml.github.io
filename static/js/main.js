@@ -3,8 +3,8 @@ import {addDOMListener, removeDomListener} from './dom-listener';
 
 document.addEventListener("DOMContentLoaded", () => {
 	var text = "Hi, I'm Aki. This is my website. Learn more about me below.";
-	var interval = 50;
-	var textDelay = 250;
+	var interval = 75;
+	var textDelay = 300;
 
 	var delay = interval * text.length + text.match(/(\w\.$)|(\w\. )/g).length * textDelay;
 
