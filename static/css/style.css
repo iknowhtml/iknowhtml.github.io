@@ -149,6 +149,7 @@ a{
   text-decoration: none;
   display: inline-block;
   color: black;
+  text-transform: uppercase;
 }
 
 a:after{
