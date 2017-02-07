@@ -26,7 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 		typeTimer = setTimeout(() => {
 			if ((e.keyCode >= 48 && e.keyCode <= 90) || e.keyCode >= 186) {
-				console.log(e.keyCode);
 				//eventually refactor to create function that generates regex and replicates functionality
 				if (/^a((b|(bo)|(bou)|(bout))?)$/.test(this.value)) {
 					var start = this.value.length;
@@ -50,53 +49,78 @@ document.addEventListener("DOMContentLoaded", () => {
 				}
 			}
 
+			function hide(id, expand){
+				var element = document.getElementById(id);
+				element.classList.remove(expand);
+				element.addEventListener('transitionend', (e) => {
+					console.log(e.elapsedTime);
+					if(e.elapsedTime == 1){
+						element.classList.remove('show');
+					}
+				});
+
+			}
+
+			function show(id, expand){
+				var element = document.getElementById(id);
+				element.classList.add('show');
+				resultTimer = setTimeout(() =>{
+					element.classList.add(expand);
+				}, 250);
+			}
+
 			switch (this.value) {
 				case "about":
-					document.getElementById('projects').classList.remove('expand');
-					document.getElementById('resume').classList.remove('expand-resume');
-					resultTimer = setTimeout(() => document.getElementById('about').classList.add('expand'), 250);
+					hide('projects','expand');
+					hide('resume','expand-resume');
+					show('about','expand');
 					break;
 				case "projects":
-					document.getElementById('about').classList.remove('expand');
-					document.getElementById('resume').classList.remove('expand-resume');
-					resultTimer = setTimeout(() => document.getElementById('projects').classList.add('expand'), 250);
+					hide('about','expand');
+					hide('resume','expand-resume');
+					show('projects','expand');
 					break;
 				case "resume":
-					document.getElementById('about').classList.remove('expand');
-					document.getElementById('projects').classList.remove('expand');
-					resultTimer = setTimeout(() => document.getElementById('resume').classList.add('expand-resume'), 250);
+					hide('about','expand');
+					hide('projects','expand');
+					show('resume','expand-resume');
 					break;
 				default:
-					document.getElementById('about').classList.remove('expand');
-					document.getElementById('projects').classList.remove('expand');
-					document.getElementById('resume').classList.remove('expand-resume');
+					hide('about','expand');
+					hide('projects','expand');
+					hide('resume','expand-resume');
 					break;
 			}
 			var headerText = document.getElementById('header-text');
 
 			if (this.value) {
+				//if input value in search bar is about, resume or projects, set header to "Aki Gao - 1 search result" if not already that value
 				if (this.value === "about" || this.value === "resume" || this.value === "projects") {
 					if (headerText.innerHTML != "Aki Gao - 1 search result") {
 						headerText.style.opacity = 0;
-						document.addEventListener('transitionend', () => {
+						headerText.addEventListener('transitionend', () => {
 							headerText.innerHTML = "Aki Gao - 1 search result";
 							headerText.style.opacity = 1;
 						});
 					}
-				} else {
+				}
+				//if input value in search bar is not about, resume or projects, set header to "Aki Gao - 0 search result" if not already that value
+				else {
 					if (headerText.innerHTML != "Aki Gao - 0 search results") {
 						headerText.style.opacity = 0;
-						document.addEventListener('transitionend', () => {
+						headerText.addEventListener('transitionend', () => {
 							headerText.innerHTML = "Aki Gao - 0 search results"
 							headerText.style.opacity = 1;
 						});
 					}
 				}
-			} else {
-				if (headerText.innerHTML != texts.join(' ')) {
+			}
+			//if input value in search bar is blank, set header to original header value
+			else {
+				if (headerText.innerHTML != text) {
 					headerText.style.opacity = 0;
-					document.addEventListener('transitionend', () => {
-						headerText.innerHTML = texts.join(' ');
+					headerText.addEventListener('transitionend', () => {
+						headerText.innerHTML = text;
 						headerText.style.opacity = 1;
 					});
 				}

@@ -14,5 +14,9 @@ module.exports = {
         presets: ['es2015']
 	    }
     }]
-  }
+  },
+  devServer:{
+    address: 'localhost',
+    port: 5000
+}
 }

@@ -96,14 +96,19 @@ input {
 h2 {
     font-weight: normal;
     font-size: 140%;
+    margin-bottom: 5px;
 }
 
 #about, #projects {
     width: var(--width);
     opacity: 0;
     max-height: 0;
+    display: none;
 }
 
+.show{
+  display: block !important;
+}
 .expand {
     opacity: 1 !important;
     max-height: 100% !important;
@@ -114,6 +119,17 @@ h2 {
     transition: max-height 1s, opacity 1s;
 }
 
+p{
+  margin: 0;
+}
+
+hr{
+  color: #e6e6e6;
+  width: 200px;
+  margin-top: 15px;
+  border: none;
+  border-top: 1px solid;
+}
 
 /*resume section related styling*/
 
@@ -149,7 +165,6 @@ a{
   text-decoration: none;
   display: inline-block;
   color: black;
-  text-transform: uppercase;
 }
 
 a:after{
