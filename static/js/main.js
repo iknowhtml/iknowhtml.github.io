@@ -1,5 +1,4 @@
 import type from './type';
-import {addDOMListener, removeDomListener} from './dom-listener';
 
 document.addEventListener("DOMContentLoaded", () => {
 	var text = "Hi, I'm Aki. This is my website. Learn more about me below.";
