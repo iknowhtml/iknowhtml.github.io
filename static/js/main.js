@@ -53,8 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				var element = document.getElementById(id);
 				element.classList.remove(expand);
 				element.addEventListener('transitionend', (e) => {
-					console.log(e.elapsedTime);
-					if(e.elapsedTime == 1){
+					if(e.elapsedTime <= 1){
 						element.classList.remove('show');
 					}
 				});
