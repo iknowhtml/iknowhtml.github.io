@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				var element = document.getElementById(id);
 				element.classList.remove(expand);
 				element.addEventListener('transitionend', (e) => {
-					if(e.elapsedTime <= 1){
+					if(e.elapsedTime <= 1 && e.elapsedTime >= 0.5){
 						element.classList.remove('show');
 					}
 				});
