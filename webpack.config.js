@@ -1,10 +1,12 @@
 module.exports = {
   entry: './static/js/main.js',
+
   output: {
     path: __dirname,
     filename: 'index.js'
   },
-  module:{
+
+  module: {
     loaders: [{
       test:/\.js$/,
       exclude: /node_modules/,
@@ -15,8 +17,13 @@ module.exports = {
 	    }
     }]
   },
-  devServer:{
-    address: 'localhost',
+
+  resolveLoader: {
+    moduleExtensions: ['-loader']
+  },
+
+  devServer: {
+    contentBase: './',
     port: 5000
-}
+  }
 }
