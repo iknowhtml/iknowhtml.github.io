@@ -7,4 +7,4 @@ cd iknowhtml.github.io
 npm install
 npm start
 ```
-###Then go to localhost:5000 to view site
+Then go to localhost:5000 to view site.
