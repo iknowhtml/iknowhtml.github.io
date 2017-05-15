@@ -1,5 +1,5 @@
 import type from './type';
-console.log('wtf');
+
 document.addEventListener("DOMContentLoaded", () => {
 	var text = "Hi, I'm Aki. This is my website. Learn more about me below.";
 	var interval = 50;
