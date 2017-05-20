@@ -52,8 +52,8 @@ document.addEventListener("DOMContentLoaded", () => {
 				var element = document.getElementById(id);
 				element.classList.remove(expand);
 				element.addEventListener('transitionend', (e) => {
-					if(e.elapsedTime <= 1 && e.elapsedTime >= 0.5){
-						element.classList.remove('show');
+					if(e.elapsedTime <= 1 && e.elapsedTime >= 0.5 && id == "resume"){
+						//element.classList.remove('show');
 					}
 				});
 
@@ -69,24 +69,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
 			switch (this.value) {
 				case "about":
-					hide('projects','expand');
-					hide('resume','expand-resume');
+					hide('projects','expand-fast');
+					hide('resume','expand-fast');
 					show('about','expand');
 					break;
 				case "projects":
 					hide('about','expand');
-					hide('resume','expand-resume');
-					show('projects','expand');
+					hide('resume','expand-fast');
+					show('projects','expand-fast');
 					break;
 				case "resume":
 					hide('about','expand');
-					hide('projects','expand');
-					show('resume','expand-resume');
+					hide('projects','expand-fast');
+					show('resume','expand-fast');
 					break;
 				default:
 					hide('about','expand');
-					hide('projects','expand');
-					hide('resume','expand-resume');
+					hide('projects','expand-fast');
+					hide('resume','expand-fast');
 					break;
 			}
 			var headerText = document.getElementById('header-text');

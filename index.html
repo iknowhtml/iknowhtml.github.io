@@ -1,57 +1,65 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Aki Gao</title>
-    <link rel="stylesheet" href="static/css/style.css?1.1">
-    <link rel="icon" href="static/favicon.png">
-    <script src="index.js"></script>
+  <title>Aki Gao</title>
+  <link rel="stylesheet" href="static/css/style.css?2.0">
+  <link rel="icon" href="static/favicon.png">
+  <script src="index.js"></script>
 </head>
+
 <body>
-    <div id="container">
-        <div id="header">
-            <h1>
+  <div id="container">
+    <div id="header">
+      <h1>
           <span id="header-text"></span><span id="cursor">|</span>
         </h1>
-            <input type="text" id="search-bar" autocomplete="off" placeholder="e.g., about, resume, projects"></input>
-        </div>
-        <div id="about">
-          <h2>
+      <input type="text" id="search-bar" autocomplete="off" placeholder="e.g., about, resume, projects"></input>
+    </div>
+    <div id="about">
+      <h2>
             Hey there, I'm a full stack Javascript developer with a passion for technology and innovation.
             I'm interested in web technologies like React/Redux, PostCSS, Webpack and Node.
             I also enjoy learning about application architecture, devops and the latest tools for web development.
             When I'm not coding, I enjoy listening to music, urban dancing and lifting heavy stuff at the gym.
           </h2>
-          <h2>
+      <h2>
             Check out my <a href="https://github.com/iknowhtml"><em>Github</em></a> and <a href="https://www.linkedin.com/in/aki-gao-a0065697"><em>LinkedIn</em></a>.
             To contact me, email me at <a href="mailto:xag9bb@virginia.edu"><em>xag9bb@virginia.edu</em></a>.
           </h2>
-        </div>
-        <div id="projects">
-            <h2><a href="static/cv.html" target="_blank">Resume</a></h2>
-            <p>
-              Fully responsive resume written entirely in HTML and SCSS.
-              Created to afford ease in modifying content and formatting, as well as in order to integrate seemlessly in my personal site.
-              Try resizing it!
-            </p>
-            <hr>
-            <h2><a href="http://iknowhtml.github.io/kanban-app" target="_blank">Kanban Application</a></h2>
-            <p>
-              A Kanban application made to learn React and Redux, which were used to implement the view and data managment respectively.
-              Drag and drop functionality created using React DnD. Packages and build managed with NPM and Webpack.
-            </p>
-            <hr>
-            <h2><a href="https://devpost.com/software/perish-5hvgm9" target="_blank">Perish</a></h2>
-            <p>
-              A RESTful API for anonymous and temporary file storage.
-              Implemented in Rails, files are hashed using SHA256 and the digest is used as an unique ID for downloading the file.
-              Files are also encrypted using AES256 and then stored on AWS S3.
-              Winner of the First API | Summer Jam Hackathon!
-            </p>
-        </div>
-        <div id="resume">
-          <iframe src="static/cv.html"></iframe>
-          <h3><a href="static/cv.pdf" download="Xiaoyu A. Gao Resume.pdf">DOWNLOAD</a></h3>
-      </div>
     </div>
+    <div id="projects">
+      <h2><a href="#">Personal Website</a></h2>
+      <p>
+        This website is written entirely in vanilla Javascript and HTML5/CSS3! Deployed to Github pages.
+      </p>
+      <hr>
+      <h2><a href="static/cv.html" target="_blank">Resume</a></h2>
+      <p>
+        Fully responsive resume written entirely in HTML and SCSS. Created to afford ease in modifying content and formatting, as well as in order to integrate seemlessly in my personal site. Try resizing it!
+      </p>
+      <hr>
+      <h2><a href="http://iknowhtml.github.io/blog-app" target="_blank">Resume</a></h2>
+      <p>
+        A simple blog application implemented with React, Redux, React Router and Redux Form! Deployment to Github pages automated with Travis and uses a custom solution for deploying project to Github pages as an Single Page Application.
+      </p>
+      <hr>
+      <h2><a href="http://iknowhtml.github.io/kanban-app" target="_blank">Kanban Application</a></h2>
+      <p>
+        A Kanban application made to learn React and Redux, which were used to implement the view and data managment respectively. Drag and drop functionality created using React DnD. Packages and build managed with NPM and Webpack.
+      </p>
+      <hr>
+      <h2><a href="https://devpost.com/software/perish-5hvgm9" target="_blank">Perish</a></h2>
+      <p>
+        A RESTful API for anonymous and temporary file storage. Implemented in Rails, files are hashed using SHA256 and the digest is used as an unique ID for downloading the file. Files are also encrypted using AES256 and then stored on AWS S3. Winner of the
+        First API | Summer Jam Hackathon!
+      </p>
+    </div>
+    <div id="resume">
+      <iframe src="static/cv.html"></iframe>
+      <h3><a href="static/cv.pdf" download="Xiaoyu A. Gao Resume.pdf">DOWNLOAD</a></h3>
+    </div>
+  </div>
 </body>
+
 </html>
