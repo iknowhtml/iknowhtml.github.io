@@ -51,12 +51,6 @@ document.addEventListener("DOMContentLoaded", () => {
 			function hide(id, expand){
 				var element = document.getElementById(id);
 				element.classList.remove(expand);
-				element.addEventListener('transitionend', (e) => {
-					if(e.elapsedTime <= 1 && e.elapsedTime >= 0.5 && id == "resume"){
-						element.classList.remove('show');
-					}
-				});
-
 			}
 
 			function show(id, expand){

@@ -137,6 +137,7 @@ hr {
   opacity: 0;
   max-height: 0;
   height: 80%;
+  display: none;
   transition: max-height 1s, opacity 0.5s;
 }
 
