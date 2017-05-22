@@ -48,39 +48,45 @@ document.addEventListener("DOMContentLoaded", () => {
 				}
 			}
 
-			function hide(id, expand){
+			function hide(id, expand) {
 				var element = document.getElementById(id);
-				element.classList.remove(expand);
+
+				if (element.classList.value !== '') {
+					element.classList.remove(expand);
+					resultTimer = setTimeout(() => {
+						element.classList.remove('show');
+					}, 2000);
+				}
 			}
 
-			function show(id, expand){
+			function show(id, expand) {
 				var element = document.getElementById(id);
 				element.classList.add('show');
-				resultTimer = setTimeout(() =>{
+				resultTimer = setTimeout(() => {
 					element.classList.add(expand);
 				}, 250);
 			}
 
 			switch (this.value) {
 				case "about":
-					hide('projects','expand-fast');
-					hide('resume','expand-fast');
-					show('about','expand');
+					hide('projects', 'expand-fast');
+					hide('resume', 'expand-fast');
+					show('about', 'expand');
 					break;
 				case "projects":
-					hide('about','expand');
-					hide('resume','expand-fast');
-					show('projects','expand-fast');
+					hide('about', 'expand');
+					hide('resume', 'expand-fast');
+					show('projects', 'expand-fast');
 					break;
 				case "resume":
-					hide('about','expand');
-					hide('projects','expand-fast');
-					show('resume','expand-fast');
+					hide('about', 'expand');
+					hide('projects', 'expand-fast');
+					show('resume', 'expand-fast');
 					break;
 				default:
-					hide('about','expand');
-					hide('projects','expand-fast');
-					hide('resume','expand-fast');
+					hide('about', 'expand');
+					hide('projects', 'expand-fast');
+					hide('resume', 'expand-fast');
 					break;
 			}
 			var headerText = document.getElementById('header-text');
@@ -93,22 +99,19 @@ document.addEventListener("DOMContentLoaded", () => {
 						headerText.addEventListener('transitionend', () => {
 							headerText.innerHTML = "Aki Gao - 1 search result";
 							headerText.style.opacity = 1;
-						});
+						}) //if input value in search bar is not about, resume or projects, set header to "Aki Gao - 0 search result" if not already that value;
 					}
-				}
-				//if input value in search bar is not about, resume or projects, set header to "Aki Gao - 0 search result" if not already that value
-				else {
+				} else {
 					if (headerText.innerHTML != "Aki Gao - 0 search results") {
 						headerText.style.opacity = 0;
 						headerText.addEventListener('transitionend', () => {
 							headerText.innerHTML = "Aki Gao - 0 search results"
 							headerText.style.opacity = 1;
 						});
+						//if input value in search bar is blank, set header to original header value
 					}
 				}
-			}
-			//if input value in search bar is blank, set header to original header value
-			else {
+			} else {
 				if (headerText.innerHTML != text) {
 					headerText.style.opacity = 0;
 					headerText.addEventListener('transitionend', () => {
