@@ -6,11 +6,11 @@ module.exports = function webpackConfig(env) {
 
     output: {
       path: __dirname,
-      filename: 'index.js'
+      filename: 'index.js',
     },
 
     plugins: [
-      new webpack.DefinePlugin({ ENV: JSON.stringify(env.environment) })
+      new webpack.DefinePlugin({ ENV: JSON.stringify(env.environment), }),
     ],
 
     module: {
@@ -22,23 +22,23 @@ module.exports = function webpackConfig(env) {
           include: __dirname,
           options: {
             babelrc: false,
-            presets: ['es2015']
-          }
+            presets: ['es2015',],
+          },
         },
         {
           test: /\.html$|\.css$/,
-          loader: 'raw-loader'
-        }
-      ]
+          loader: 'raw-loader',
+        },
+      ],
     },
 
     resolveLoader: {
-      moduleExtensions: ['-loader']
+      moduleExtensions: ['-loader',],
     },
 
     devServer: {
       contentBase: './',
-      port: 5000
-    }
+      port: 5000,
+    },
   };
 };

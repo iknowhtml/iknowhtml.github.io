@@ -34,26 +34,24 @@ document.addEventListener('DOMContentLoaded', () => {
     typeTimer = setTimeout(() => {
       if ((e.keyCode >= 48 && e.keyCode <= 90) || e.keyCode >= 186) {
         //eventually refactor to create function that generates regex and replicates functionality
+        var start = this.value.length;
         if (/^a((b|(bo)|(bou)|(bout))?)$/.test(this.value)) {
-          var start = this.value.length;
           this.value = 'about';
           this.setSelectionRange(start, 5);
           this.focus();
         }
 
-        if (/^r((e|(es)|(esu)|(esum)|(esume))?)$/.test(this.value)) {
-          var start = this.value.length;
+        else if (/^r((e|(es)|(esu)|(esum)|(esume))?)$/.test(this.value)) {
           this.value = 'resume';
           this.setSelectionRange(start, 6);
           this.focus();
         }
 
-        if (
+        else if (
           /^p((r|(ro)|(roj)|(roje)|(rojec)|(roject)|(rojects))?)$/.test(
             this.value
           )
         ) {
-          var start = this.value.length;
           this.value = 'projects';
           this.setSelectionRange(start, 8);
           this.focus();

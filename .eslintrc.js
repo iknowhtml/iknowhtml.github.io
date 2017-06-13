@@ -3,15 +3,20 @@ module.exports = {
     ecmaVersion: 7,
     sourceType: 'module',
     ecmaFeatures: {
-      modules: true
-    }
+      modules: true,
+    },
   },
   extends: ['eslint:recommended'],
+  globals: {
+    ENV: true,
+    WebKitMutationObserver: true,
+  },
   rules: {
     'no-console': 0,
-    'comma-dangle': ['error', 'only-multiline']
+    'comma-dangle': ['error', 'always'],
   },
   env: {
-    browser: true
-  }
+    browser: true,
+    node: true,
+  },
 };
