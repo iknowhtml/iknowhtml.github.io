@@ -2,6 +2,7 @@ import type from './type';
 
 if(ENV === 'development'){
   require('../../index.html');
+  require('../css/style.css');
 }
 
 document.addEventListener("DOMContentLoaded", () => {
