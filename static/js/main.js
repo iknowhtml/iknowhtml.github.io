@@ -1,130 +1,141 @@
 import type from './type';
 
-if(ENV === 'development'){
+if (ENV === 'development') {
   require('../../index.html');
   require('../css/style.css');
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-	var text = "Hi, I'm Aki. This is my website. Learn more about me below.";
-	var interval = 50;
-	var textDelay = 400;
+document.addEventListener('DOMContentLoaded', () => {
+  var text = "Hi, I'm Aki. This is my website. Learn more about me below.";
+  var interval = 50;
+  var textDelay = 400;
 
-	var delay = interval * text.length + text.match(/(\w\.$)|(\w\. )/g).length * textDelay;
+  var delay =
+    interval * text.length + text.match(/(\w\.$)|(\w\. )/g).length * textDelay;
 
-	type("header-text", interval, text, textDelay);
-	//fades search bar in and removes cursor from dom
-	setTimeout(() => {
-		document.getElementById('search-bar').classList.add("fade-in");
-		document.getElementsByTagName('h1')[0].removeChild(document.getElementById('cursor'));
-		document.getElementById('search-bar').focus();
-	}, delay);
+  type('header-text', interval, text, textDelay);
+  //fades search bar in and removes cursor from dom
+  setTimeout(() => {
+    document.getElementById('search-bar').classList.add('fade-in');
+    document
+      .getElementsByTagName('h1')[0]
+      .removeChild(document.getElementById('cursor'));
+    document.getElementById('search-bar').focus();
+  }, delay);
 
-	var typeTimer = null;
-	var resultTimer = null;
+  var typeTimer = null;
+  var resultTimer = null;
 
-	//sets up search bar autocomplete
-	document.getElementById('search-bar').addEventListener("keyup", function(e) {
-		clearTimeout(typeTimer);
-		clearTimeout(resultTimer);
+  //sets up search bar autocomplete
+  document.getElementById('search-bar').addEventListener('keyup', function(e) {
+    clearTimeout(typeTimer);
+    clearTimeout(resultTimer);
 
-		typeTimer = setTimeout(() => {
-			if ((e.keyCode >= 48 && e.keyCode <= 90) || e.keyCode >= 186) {
-				//eventually refactor to create function that generates regex and replicates functionality
-				if (/^a((b|(bo)|(bou)|(bout))?)$/.test(this.value)) {
-					var start = this.value.length;
-					this.value = "about";
-					this.setSelectionRange(start, 5);
-					this.focus();
-				}
+    typeTimer = setTimeout(() => {
+      if ((e.keyCode >= 48 && e.keyCode <= 90) || e.keyCode >= 186) {
+        //eventually refactor to create function that generates regex and replicates functionality
+        if (/^a((b|(bo)|(bou)|(bout))?)$/.test(this.value)) {
+          var start = this.value.length;
+          this.value = 'about';
+          this.setSelectionRange(start, 5);
+          this.focus();
+        }
 
-				if (/^r((e|(es)|(esu)|(esum)|(esume))?)$/.test(this.value)) {
-					var start = this.value.length;
-					this.value = "resume";
-					this.setSelectionRange(start, 6);
-					this.focus();
-				}
+        if (/^r((e|(es)|(esu)|(esum)|(esume))?)$/.test(this.value)) {
+          var start = this.value.length;
+          this.value = 'resume';
+          this.setSelectionRange(start, 6);
+          this.focus();
+        }
 
-				if (/^p((r|(ro)|(roj)|(roje)|(rojec)|(roject)|(rojects))?)$/.test(this.value)) {
-					var start = this.value.length;
-					this.value = "projects";
-					this.setSelectionRange(start, 8);
-					this.focus();
-				}
-			}
+        if (
+          /^p((r|(ro)|(roj)|(roje)|(rojec)|(roject)|(rojects))?)$/.test(
+            this.value
+          )
+        ) {
+          var start = this.value.length;
+          this.value = 'projects';
+          this.setSelectionRange(start, 8);
+          this.focus();
+        }
+      }
 
-			function hide(id, expand) {
-				var element = document.getElementById(id);
+      function hide(id, expand) {
+        var element = document.getElementById(id);
 
-				if (element.classList.value !== '') {
-					element.classList.remove(expand);
-					resultTimer = setTimeout(() => {
-						element.classList.remove('show');
-					}, 2000);
-				}
-			}
+        if (element.classList.value !== '') {
+          element.classList.remove(expand);
+          resultTimer = setTimeout(() => {
+            element.classList.remove('show');
+          }, 2000);
+        }
+      }
 
-			function show(id, expand) {
-				var element = document.getElementById(id);
-				element.classList.add('show');
-				resultTimer = setTimeout(() => {
-					element.classList.add(expand);
-				}, 250);
-			}
+      function show(id, expand) {
+        var element = document.getElementById(id);
+        element.classList.add('show');
+        resultTimer = setTimeout(() => {
+          element.classList.add(expand);
+        }, 250);
+      }
 
-			switch (this.value) {
-				case "about":
-					hide('projects', 'expand-fast');
-					hide('resume', 'expand-fast');
-					show('about', 'expand');
-					break;
-				case "projects":
-					hide('about', 'expand');
-					hide('resume', 'expand-fast');
-					show('projects', 'expand-fast');
-					break;
-				case "resume":
-					hide('about', 'expand');
-					hide('projects', 'expand-fast');
-					show('resume', 'expand-fast');
-					break;
-				default:
-					hide('about', 'expand');
-					hide('projects', 'expand-fast');
-					hide('resume', 'expand-fast');
-					break;
-			}
-			var headerText = document.getElementById('header-text');
+      switch (this.value) {
+        case 'about':
+          hide('projects', 'expand-fast');
+          hide('resume', 'expand-fast');
+          show('about', 'expand');
+          break;
+        case 'projects':
+          hide('about', 'expand');
+          hide('resume', 'expand-fast');
+          show('projects', 'expand-fast');
+          break;
+        case 'resume':
+          hide('about', 'expand');
+          hide('projects', 'expand-fast');
+          show('resume', 'expand-fast');
+          break;
+        default:
+          hide('about', 'expand');
+          hide('projects', 'expand-fast');
+          hide('resume', 'expand-fast');
+          break;
+      }
+      var headerText = document.getElementById('header-text');
 
-			if (this.value) {
-				//if input value in search bar is about, resume or projects, set header to "Aki Gao - 1 search result" if not already that value
-				if (this.value === "about" || this.value === "resume" || this.value === "projects") {
-					if (headerText.innerHTML != "Aki Gao - 1 search result") {
-						headerText.style.opacity = 0;
-						headerText.addEventListener('transitionend', () => {
-							headerText.innerHTML = "Aki Gao - 1 search result";
-							headerText.style.opacity = 1;
-						}) //if input value in search bar is not about, resume or projects, set header to "Aki Gao - 0 search result" if not already that value;
-					}
-				} else {
-					if (headerText.innerHTML != "Aki Gao - 0 search results") {
-						headerText.style.opacity = 0;
-						headerText.addEventListener('transitionend', () => {
-							headerText.innerHTML = "Aki Gao - 0 search results"
-							headerText.style.opacity = 1;
-						});
-						//if input value in search bar is blank, set header to original header value
-					}
-				}
-			} else {
-				if (headerText.innerHTML != text) {
-					headerText.style.opacity = 0;
-					headerText.addEventListener('transitionend', () => {
-						headerText.innerHTML = text;
-						headerText.style.opacity = 1;
-					});
-				}
-			}
-		}, 150);
-	});
+      if (this.value) {
+        //if input value in search bar is about, resume or projects, set header to "Aki Gao - 1 search result" if not already that value
+        if (
+          this.value === 'about' ||
+          this.value === 'resume' ||
+          this.value === 'projects'
+        ) {
+          if (headerText.innerHTML != 'Aki Gao - 1 search result') {
+            headerText.style.opacity = 0;
+            headerText.addEventListener('transitionend', () => {
+              headerText.innerHTML = 'Aki Gao - 1 search result';
+              headerText.style.opacity = 1;
+            }); //if input value in search bar is not about, resume or projects, set header to "Aki Gao - 0 search result" if not already that value;
+          }
+        } else {
+          if (headerText.innerHTML != 'Aki Gao - 0 search results') {
+            headerText.style.opacity = 0;
+            headerText.addEventListener('transitionend', () => {
+              headerText.innerHTML = 'Aki Gao - 0 search results';
+              headerText.style.opacity = 1;
+            });
+            //if input value in search bar is blank, set header to original header value
+          }
+        }
+      } else {
+        if (headerText.innerHTML != text) {
+          headerText.style.opacity = 0;
+          headerText.addEventListener('transitionend', () => {
+            headerText.innerHTML = text;
+            headerText.style.opacity = 1;
+          });
+        }
+      }
+    }, 150);
+  });
 });
