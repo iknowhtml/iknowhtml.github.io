@@ -117,7 +117,7 @@ h2 {
 .expand {
   opacity: 1 !important;
   max-height: 100% !important;
-  transition: max-height 2s, opacity 2s;
+  transition: max-height 1.5s, opacity 1.5s;
 }
 
 #about:not(.expand), #projects:not(.expand) {
