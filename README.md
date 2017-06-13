@@ -1,4 +1,4 @@
-# Aki Gao's Personal Site
+# Aki Gao's Personal Site  [![Build Status](https://travis-ci.org/iknowhtml/iknowhtml.github.io.png?branch=master)](https://travis-ci.org/iknowhtml/iknowhtml.github.io)
 Personal Website For Aki Gao. Written entirely in vanilla Javascript (ES6) and HTML5/CSS3.
 ## To use this site, run the following commands in the terminal:
 ```bash
