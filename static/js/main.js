@@ -1,5 +1,9 @@
 import type from './type';
 
+if(ENV === 'development'){
+  require('../../index.html');
+}
+
 document.addEventListener("DOMContentLoaded", () => {
 	var text = "Hi, I'm Aki. This is my website. Learn more about me below.";
 	var interval = 50;
