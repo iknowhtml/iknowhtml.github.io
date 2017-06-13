@@ -1,40 +1,44 @@
 const webpack = require('webpack');
 
 module.exports = function webpackConfig(env) {
-	return {
-		entry: './static/js/main.js',
+  return {
+    entry: './static/js/main.js',
 
-		output: {
-			path: __dirname,
-			filename: 'index.js'
-		},
+    output: {
+      path: __dirname,
+      filename: 'index.js'
+    },
 
-		plugins: [new webpack.DefinePlugin({ENV: JSON.stringify(env.environment)})],
+    plugins: [
+      new webpack.DefinePlugin({ ENV: JSON.stringify(env.environment) })
+    ],
 
-		module: {
-			loaders: [
-				{
-					test: /\.js$/,
-					exclude: /node_modules/,
-					loader: "babel",
-					include: __dirname,
-					query: {
-						presets: ['es2015']
-					}
-				}, {
-					test: /\.html$|\.css$/,
-					loader: 'raw-loader'
-				}
-			]
-		},
+    module: {
+      loaders: [
+        {
+          test: /\.js$/,
+          exclude: /node_modules/,
+          loader: 'babel',
+          include: __dirname,
+          options: {
+            babelrc: false,
+            presets: ['es2015']
+          }
+        },
+        {
+          test: /\.html$|\.css$/,
+          loader: 'raw-loader'
+        }
+      ]
+    },
 
-		resolveLoader: {
-			moduleExtensions: ['-loader']
-		},
+    resolveLoader: {
+      moduleExtensions: ['-loader']
+    },
 
-		devServer: {
-			contentBase: './',
-			port: 5000
-		}
-	}
-}
+    devServer: {
+      contentBase: './',
+      port: 5000
+    }
+  };
+};
