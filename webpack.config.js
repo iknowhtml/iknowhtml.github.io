@@ -22,7 +22,7 @@ module.exports = function webpackConfig(env) {
 						presets: ['es2015']
 					}
 				}, {
-					test: /\.html$/,
+					test: /\.html$|\.css$/,
 					loader: 'raw-loader'
 				}
 			]
