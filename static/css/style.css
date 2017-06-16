@@ -104,9 +104,9 @@ h2 {
 }
 
 #projects{
+  height: 60%;
   overflow: scroll;
   padding-right: 10px;
-  padding-bottom: 25px;
 }
 
 
