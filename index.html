@@ -36,10 +36,14 @@
       <h3><a href="https://iknowhtml.github.io/resume/cv.pdf" download="Xiaoyu A. Gao Resume.pdf">DOWNLOAD</a></h3>
     </div>
     <div id="projects">
+      <h2><a href="https://github.com/MoguraMiner">Mogura</a></h2>
+      <p>
+        An AWS-based cloud mining platform using EC2 P2 spot instances to mine Ether using dockerized ethminer containers running off a geth node running inside of a docker container on a on demand M4 instance. The mining P2 spot instances are provisioned with terraform and the bid price is dynamically updated in order to insure profitability using the Node AWS SDK. A separate docker container running on the same instance as the geth node container runs a Node application that runs regular caculations to automatically update bid prices and also provision P2 spot instances using Terraform. Project also leverages Packer to build AMIs with Docker or NVIDIA-Docker preinstalled for faster spin up of instances. <em>In progress.</em>
+      </p>
+      <hr>
       <h2><a href="https://github.com/ManekiBoto">ManekiBoto</a></h2>
       <p>
-        A cryptocurrency arbitrage bot for automating cryptocurrency trading between various markets. Uses a collection of custom API libraries for pulling public data, as well as programatically initiating trades on Poloniex and Kraken. Leverages a custom algorithm
-        to determine maximum profitability between currency pairs and markets. Written entirely in Node.js.
+        A cryptocurrency arbitrage bot for automating cryptocurrency trading between various markets. Uses a collection of custom API libraries for pulling public data, as well as programatically initiating trades on Poloniex and Kraken. Leverages a custom algorithm to determine maximum profitability between currency pairs and markets. Written entirely in Node.js. <em>In progress.</em>
       </p>
       <hr>
       <h2><a href="https://uva-lambdas.github.io/">Lambdas at UVA Website</a></h2>
