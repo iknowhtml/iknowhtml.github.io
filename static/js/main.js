@@ -1,4 +1,4 @@
-import type from './type';
+import type from './lib/type';
 
 if (ENV === 'development') {
   require('../../index.html');
@@ -6,11 +6,11 @@ if (ENV === 'development') {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  var text = "Hi, I'm Aki. This is my website. Learn more about me below.";
-  var interval = 50;
-  var textDelay = 400;
+  let text = "Hi, I'm Aki. This is my website. Learn more about me below.";
+  const interval = 50;
+  const textDelay = 400;
 
-  var delay =
+  const delay =
     interval * text.length + text.match(/(\w\.$)|(\w\. )/g).length * textDelay;
 
   type('header-text', interval, text, textDelay);
@@ -23,8 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('search-bar').focus();
   }, delay);
 
-  var typeTimer = null;
-  var resultTimer = null;
+  let typeTimer = null;
+  let resultTimer = null;
 
   //sets up search bar autocomplete
   document.getElementById('search-bar').addEventListener('keyup', function(e) {
@@ -34,20 +34,16 @@ document.addEventListener('DOMContentLoaded', () => {
     typeTimer = setTimeout(() => {
       if ((e.keyCode >= 48 && e.keyCode <= 90) || e.keyCode >= 186) {
         //eventually refactor to create function that generates regex and replicates functionality
-        var start = this.value.length;
+        const start = this.value.length;
         if (/^a((b|(bo)|(bou)|(bout))?)$/.test(this.value)) {
           this.value = 'about';
           this.setSelectionRange(start, 5);
           this.focus();
-        }
-
-        else if (/^r((e|(es)|(esu)|(esum)|(esume))?)$/.test(this.value)) {
+        } else if (/^r((e|(es)|(esu)|(esum)|(esume))?)$/.test(this.value)) {
           this.value = 'resume';
           this.setSelectionRange(start, 6);
           this.focus();
-        }
-
-        else if (
+        } else if (
           /^p((r|(ro)|(roj)|(roje)|(rojec)|(roject)|(rojects))?)$/.test(
             this.value
           )
@@ -59,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       function hide(id, expand) {
-        var element = document.getElementById(id);
+        const element = document.getElementById(id);
 
         if (element.classList.value !== '') {
           element.classList.remove(expand);
@@ -70,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       function show(id, expand) {
-        var element = document.getElementById(id);
+        const element = document.getElementById(id);
         element.classList.add('show');
         resultTimer = setTimeout(() => {
           element.classList.add(expand);
@@ -99,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
           hide('resume', 'expand-fast');
           break;
       }
-      var headerText = document.getElementById('header-text');
+      const headerText = document.getElementById('header-text');
 
       if (this.value) {
         //if input value in search bar is about, resume or projects, set header to "Aki Gao - 1 search result" if not already that value
