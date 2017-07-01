@@ -2,7 +2,7 @@ import repeat from './repeat';
 
 function type(id, interval, text, textDelay) {
   textDelay = textDelay || 0;
-  var textIndex = 0;
+  let textIndex = 0;
   repeat(
     () => {
       document.getElementById(id).innerHTML =

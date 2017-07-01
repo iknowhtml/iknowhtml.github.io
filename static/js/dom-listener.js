@@ -1,6 +1,6 @@
 function addDOMListener(target, callback, config) {
-  var element = document.getElementById(target);
-  var observer = new WebKitMutationObserver(callback());
+  const element = document.getElementById(target);
+  const observer = new WebKitMutationObserver(callback());
 
   config = config || {
     attributes: true,
