@@ -1,6 +1,16 @@
 import React from 'react';
-import style from './App.css';
+import style from './app.css';
 
-const App = () => <div>Hello React</div>;
+import Typing from './typing';
 
-export default App;
+const app = () => (
+  <div>
+    <Typing
+      text="Hi, I'm Aki. This is my website. Learn more about me below."
+      characterDelay={75}
+      punctuationDelay={250}
+    />
+  </div>
+);
+
+export default app;
