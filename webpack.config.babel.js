@@ -13,7 +13,7 @@ const paths = {
 };
 
 const base = {
-  entry: ['babel-polyfill', `${paths.src}/index.js`,],
+  entry: [`${paths.src}/index.js`,],
   output: {
     filename: '[name].js',
     chunkFilename: '[name].js',
