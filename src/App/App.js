@@ -7,7 +7,7 @@ const app = () => (
   <div>
     <Typing
       text="Hi, I'm Aki. This is my website. Learn more about me below."
-      characterDelay={75}
+      characterDelay={50}
       punctuationDelay={250}
     />
   </div>
