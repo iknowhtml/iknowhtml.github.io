@@ -13,7 +13,12 @@ class Typing extends Component {
   }
 
   componentDidUpdate() {
-    this.typeCharacter();
+    if (this.checkPunctuation()) {
+      clearInterval(this.intervalID);
+      setTimeout(() => {
+        this.typeCharacter();
+      }, this.state.punctuationDelay);
+    }
   }
 
   checkPunctuation() {
@@ -27,13 +32,10 @@ class Typing extends Component {
   }
 
   typeCharacter() {
-    if (this.state.index < this.state.text.length) {
-      console.time(this.state.text[this.state.index]);
-      setTimeout(() => {
-        this.updateIndex();
-        console.timeEnd(this.state.text[this.state.index]);
-      }, this.checkPunctuation() ? this.state.punctuationDelay : this.state.characterDelay);
-    }
+    this.intervalID = setInterval(
+      () => this.updateIndex(),
+      this.state.characterDelay
+    );
   }
 
   render() {
