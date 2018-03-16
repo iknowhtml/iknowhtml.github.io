@@ -1,20 +1,15 @@
 module.exports = {
+  parser: 'babel-eslint',
   parserOptions: {
-    ecmaVersion: 7,
+    ecmaVersion: 8,
     sourceType: 'module',
     ecmaFeatures: {
       modules: true,
     },
   },
-  extends: ['eslint:recommended'],
-  globals: {
-    ENV: true,
-    WebKitMutationObserver: true,
-  },
-  rules: {
-    'no-console': 0,
-    'comma-dangle': ['error', 'always'],
-  },
+  extends: [],
+  rules: {},
+  plugins: ['react', 'jsx-a11y', 'import'],
   env: {
     browser: true,
     node: true,
