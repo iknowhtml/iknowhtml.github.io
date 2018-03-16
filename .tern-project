@@ -8,6 +8,12 @@
     "node_modules/**"
   ],
   "plugins": {
-    "doc_comment": true
+    "doc_comment": true,
+    "node": {
+      "dontLoad": "",
+      "load": "",
+      "modules": ""
+    },
+    "es_modules": {}
   }
 }
