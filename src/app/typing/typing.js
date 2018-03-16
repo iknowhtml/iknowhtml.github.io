@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Typing extends Component {
+class Typing extends React.Component {
   state = {
     text: this.props.text,
     index: 0,
@@ -39,7 +39,11 @@ class Typing extends Component {
   }
 
   render() {
-    return <div>{this.state.text.substring(0, this.state.index)}</div>;
+    return (
+      <React.Fragment>
+        {this.state.text.substring(0, this.state.index)}
+      </React.Fragment>
+    );
   }
 }
 
