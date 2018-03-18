@@ -2,7 +2,7 @@ import React from 'react';
 
 class Typing extends React.Component {
   state = {
-    text: this.props.text,
+    text: this.props.children,
     index: 0,
     characterDelay: this.props.characterDelay,
     punctuationDelay: this.props.punctuationDelay,
