@@ -7,9 +7,16 @@ class Home extends React.Component {
   render() {
     return (
       <div className={style.home}>
-        <Typing characterDelay={65} punctuationDelay={500}>
-          Hi, I'm Aki. This is my website. Learn more about me below.
-        </Typing>
+        <div className={style.mainHeader}>
+          <Typing characterDelay={50} punctuationDelay={500}>
+            Hi, I'm Aki. This is my website. Learn more about me below.
+          </Typing>
+        </div>
+        <input
+          className={style.searchBar}
+          type="text"
+          placeholder="e.g., about, resume, projects"
+        />
       </div>
     );
   }
