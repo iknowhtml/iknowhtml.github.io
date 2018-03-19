@@ -1,9 +1,20 @@
 div.home {
-  height: 100%;
+}
 
-  display: flex;
+input.searchBar {
+  width: 50vw;
+  min-width: 550px;
+  font-size: 1.75em;
 
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  border: none;
+  border-bottom: solid #e6e6e6 1px;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+div.mainHeader {
+  font-size: 1.2em;
+  margin-bottom: 0.1em;
 }
