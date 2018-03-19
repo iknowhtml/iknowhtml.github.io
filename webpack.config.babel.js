@@ -1,7 +1,7 @@
 import path from 'path';
 import webpack from 'webpack';
 
-import { babel, postCSS, } from './partials/modules';
+import { babel, postCSS, fonts, } from './partials/modules';
 import { htmlWebpack, hotModuleReplacement, } from './partials/plugins';
 import { devServer, } from './partials/configurations';
 import { splitChunks, runtimeChunk, } from './partials/optimizations';
@@ -21,19 +21,19 @@ const base = {
   },
 };
 
-const common = [babel({ exclude: paths.modules, }),];
-const development = [
-  postCSS({ minimize: false, }),
-  htmlWebpack({ minify: false, }),
-  hotModuleReplacement(),
-  devServer(),
-];
-const production = [postCSS(), htmlWebpack(), splitChunks(), runtimeChunk(),];
-
 const webpackConfiguration = config =>
   config.reduce((config, partial) => partial(config), base);
 
 export default ({ NODE_ENV, }) => {
+  const common = [
+    babel({ exclude: paths.modules, }),
+    fonts(),
+    postCSS(NODE_ENV === 'production' ? {} : { minimize: false, }),
+    htmlWebpack(NODE_ENV === 'production' ? {} : { minify: false, }),
+  ];
+  const development = [hotModuleReplacement(), devServer(),];
+  const production = [splitChunks(), runtimeChunk(),];
+
   const config =
     NODE_ENV === 'production'
       ? [...common, ...production,]
