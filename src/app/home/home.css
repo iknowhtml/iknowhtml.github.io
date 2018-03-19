@@ -1,20 +1,31 @@
-div.home {
+:root {
+  --width: 50vw;
 }
 
 input.searchBar {
-  width: 50vw;
+  width: var(--width);
   min-width: 550px;
   font-size: 1.75em;
 
   border: none;
   border-bottom: solid #e6e6e6 1px;
 
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s, opacity 0.5s linear;
+
   &:focus {
     outline: none;
   }
 }
 
+.hide {
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
 div.mainHeader {
+  width: var(--width);
   font-size: 1.2em;
-  margin-bottom: 0.1em;
+  margin-bottom: 5px;
 }
