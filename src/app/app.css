@@ -17,6 +17,11 @@ body {
   margin: 0;
 }
 
+*::selection {
+  color: white;
+  background-color: black;
+}
+
 div.container {
   height: 100%;
 
