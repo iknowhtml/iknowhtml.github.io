@@ -23,14 +23,18 @@ class Home extends React.Component {
 
     return (
       <div className={style.home}>
-        <div className={style.mainHeader}>
-          <Typing
-            characterDelay={50}
-            punctuationDelay={500}
-            setRenderInputTrue={this.setRenderInputTrue}
-          >
-            Hi, I'm Aki. This is my website. Learn more about me below.
-          </Typing>
+        <div className={style.header}>
+          {this.state.shouldRenderInput ? (
+            "Hi, I'm Aki. This is my website. Learn more about me below."
+          ) : (
+            <Typing
+              characterDelay={50}
+              punctuationDelay={500}
+              setRenderInputTrue={this.setRenderInputTrue}
+            >
+              Hi, I'm Aki. This is my website. Learn more about me below.
+            </Typing>
+          )}
         </div>
         <input
           className={searchBar}
