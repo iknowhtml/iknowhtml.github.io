@@ -3,6 +3,13 @@
   --min-width: 550px;
 }
 
+div.header {
+  width: var(--width);
+  min-width: var(--min-width);
+  font-size: 1.2em;
+  margin-bottom: 5px;
+}
+
 input.searchBar {
   width: var(--width);
   min-width: var(--min-width);
@@ -23,11 +30,4 @@ input.searchBar {
 .hide {
   visibility: hidden !important;
   opacity: 0 !important;
-}
-
-div.mainHeader {
-  width: var(--width);
-  min-width: var(--min-width);
-  font-size: 1.2em;
-  margin-bottom: 5px;
 }
