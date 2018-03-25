@@ -9,7 +9,13 @@ import style from './app.css';
 
 class App extends React.Component {
   state = {
+    headerText: "Hi, I'm Aki. this is my website. Learn more about me below.",
     displayInput: false,
+  };
+
+  onInputChange = event => {
+    const value = event.target.value;
+    this.searchBar.setSelectionRange(0, value.length);
   };
 
   setDisplayInputTrue = () => {
@@ -27,14 +33,15 @@ class App extends React.Component {
       <div className={style.container}>
         <div className={style.header}>
           {this.state.displayInput ? (
-            "Hi, I'm Aki. This is my website. Learn more about me below."
+            this.state.headerText
           ) : (
             <Typing
               characterDelay={50}
               punctuationDelay={500}
+              isFinished={this.state.displayInput}
               setDisplayInputTrue={this.setDisplayInputTrue}
             >
-              Hi, I'm Aki. This is my website. Learn more about me below.
+              {this.state.headerText}
             </Typing>
           )}
         </div>
@@ -42,6 +49,7 @@ class App extends React.Component {
           className={searchBar}
           type="text"
           placeholder="e.g., about, resume, projects"
+          onChange={this.onInputChange}
           ref={input => {
             this.searchBar = input;
           }}
