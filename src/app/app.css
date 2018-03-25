@@ -2,6 +2,12 @@
   font-family: Raleway;
   src: url('./Raleway-Light.ttf');
 }
+
+:root {
+  --width: 50vw;
+  --min-width: 550px;
+}
+
 html {
   font-family: Raleway, serif;
   color: #333333;
@@ -17,11 +23,6 @@ body {
   margin: 0;
 }
 
-*::selection {
-  color: white;
-  background-color: black;
-}
-
 div.container {
   height: 100%;
 
@@ -30,4 +31,33 @@ div.container {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+div.header {
+  width: var(--width);
+  min-width: var(--min-width);
+  font-size: 1.2em;
+  margin-bottom: 5px;
+}
+
+input.searchBar {
+  width: var(--width);
+  min-width: var(--min-width);
+  font-size: 1.75em;
+
+  border: none;
+  border-bottom: solid #e6e6e6 1px;
+
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s, opacity 0.5s linear;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.hide {
+  visibility: hidden !important;
+  opacity: 0 !important;
 }

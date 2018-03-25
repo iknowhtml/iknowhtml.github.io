@@ -23,7 +23,7 @@ class Typing extends React.Component {
       clearInterval(this.intervalID);
       setTimeout(() => {
         this.setState({ isFinished: true });
-        this.props.setRenderInputTrue();
+        this.props.setDisplayInputTrue();
       }, 500);
     } else if (this.checkPunctuation()) {
       clearInterval(this.intervalID);
