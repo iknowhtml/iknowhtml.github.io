@@ -6,7 +6,6 @@ class Typing extends React.Component {
   state = {
     text: this.props.children,
     index: 0,
-    isFinished: false,
     characterDelay: this.props.characterDelay,
     punctuationDelay: this.props.punctuationDelay,
   };
@@ -16,13 +15,9 @@ class Typing extends React.Component {
   }
 
   componentDidUpdate() {
-    if (
-      this.state.index === this.state.text.length &&
-      this.state.isFinished === false
-    ) {
+    if (this.state.index === this.state.text.length) {
       clearInterval(this.intervalID);
       setTimeout(() => {
-        this.setState({ isFinished: true });
         this.props.setDisplayInputTrue();
       }, 500);
     } else if (this.checkPunctuation()) {
@@ -54,7 +49,7 @@ class Typing extends React.Component {
     return (
       <React.Fragment>
         {this.state.text.substring(0, this.state.index)}
-        {this.state.isFinished === false ? <Cursor /> : null}
+        {this.props.isFinished === false ? <Cursor /> : null}
       </React.Fragment>
     );
   }
