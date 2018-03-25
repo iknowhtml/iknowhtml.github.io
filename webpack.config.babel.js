@@ -1,19 +1,16 @@
-import path from 'path';
 import webpack from 'webpack';
 
-import { babel, postCSS, fonts, } from './partials/modules';
-import { htmlWebpack, hotModuleReplacement, } from './partials/plugins';
-import { devServer, } from './partials/configurations';
-import { splitChunks, runtimeChunk, } from './partials/optimizations';
+import paths from './webpack/paths';
 
-const paths = {
-  src: path.join(__dirname, 'src'),
-  dist: path.join(__dirname, 'dist'),
-  modules: path.join(__dirname, 'node_modules'),
-};
+import { babel, fonts, postCSS, } from './webpack/partials/modules';
+import { htmlWebpack, hotModuleReplacement, } from './webpack/partials/plugins';
+import { devServer, } from './webpack/partials/configurations';
+import { splitChunks, runtimeChunk, } from './webpack/partials/optimizations';
+
+import webpackConfiguration from './webpack/webpackConfiguration';
 
 const base = {
-  entry: [`${paths.src}/index.js`,],
+  entry: `${paths.src}/index.js`,
   output: {
     filename: '[name].js',
     chunkFilename: '[name].js',
@@ -21,12 +18,9 @@ const base = {
   },
 };
 
-const webpackConfiguration = config =>
-  config.reduce((config, partial) => partial(config), base);
-
 export default ({ NODE_ENV, }) => {
   const common = [
-    babel({ exclude: paths.modules, }),
+    babel(),
     fonts(),
     postCSS(NODE_ENV === 'production' ? {} : { minimize: false, }),
     htmlWebpack(NODE_ENV === 'production' ? {} : { minify: false, }),
@@ -39,5 +33,5 @@ export default ({ NODE_ENV, }) => {
       ? [...common, ...production,]
       : [...common, ...development,];
 
-  return webpackConfiguration(config);
+  return webpackConfiguration(base, config);
 };
