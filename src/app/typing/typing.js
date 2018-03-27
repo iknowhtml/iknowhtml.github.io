@@ -5,7 +5,8 @@ import Cursor from './cursor';
 class Typing extends React.Component {
   state = {
     text: this.props.children,
-    index: 0,
+    index: this.props.isFinished ? this.props.children.length : 0,
+    isFinished: this.props.isFinished,
     characterDelay: this.props.characterDelay,
     punctuationDelay: this.props.punctuationDelay,
   };
@@ -15,10 +16,14 @@ class Typing extends React.Component {
   }
 
   componentDidUpdate() {
-    if (this.state.index === this.state.text.length) {
+    if (
+      this.state.index === this.state.text.length &&
+      this.state.isFinished === false
+    ) {
       clearInterval(this.intervalID);
+      this.setState({ isFinished: true });
       setTimeout(() => {
-        this.props.setDisplayInputTrue();
+        this.props.onCompleteTyping();
       }, 500);
     } else if (this.checkPunctuation()) {
       clearInterval(this.intervalID);
@@ -48,8 +53,14 @@ class Typing extends React.Component {
   render() {
     return (
       <React.Fragment>
-        {this.state.text.substring(0, this.state.index)}
-        {this.props.isFinished === false ? <Cursor /> : null}
+        {this.state.isFinished ? (
+          this.state.text
+        ) : (
+          <React.Fragment>
+            {this.state.text.substring(0, this.state.index)}
+            <Cursor />
+          </React.Fragment>
+        )}
       </React.Fragment>
     );
   }
