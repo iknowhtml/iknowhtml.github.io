@@ -4,24 +4,18 @@ import Cursor from './cursor';
 
 class Typing extends React.Component {
   state = {
-    text: this.props.children,
-    index: this.props.isFinished ? this.props.children.length : 0,
-    isFinished: this.props.isFinished,
-    characterDelay: this.props.characterDelay,
-    punctuationDelay: this.props.punctuationDelay,
+    index: 0,
   };
 
   componentDidMount() {
-    this.typeCharacter();
+    if (!this.props.isFinished) {
+      this.typeCharacter();
+    }
   }
 
   componentDidUpdate() {
-    if (
-      this.state.index === this.state.text.length &&
-      this.state.isFinished === false
-    ) {
+    if (this.state.index === this.props.children.length) {
       clearInterval(this.intervalID);
-      this.setState({ isFinished: true });
       setTimeout(() => {
         this.props.onCompleteTyping();
       }, 500);
@@ -29,12 +23,14 @@ class Typing extends React.Component {
       clearInterval(this.intervalID);
       setTimeout(() => {
         this.typeCharacter();
-      }, this.state.punctuationDelay);
+      }, this.props.punctuationDelay);
     }
   }
 
   checkPunctuation() {
-    return /(\.|!|\?|;|,)/.test(this.state.text.charAt(this.state.index - 1));
+    return /(\.|!|\?|;|,)/.test(
+      this.props.children.charAt(this.state.index - 1)
+    );
   }
 
   updateIndex() {
@@ -46,18 +42,18 @@ class Typing extends React.Component {
   typeCharacter() {
     this.intervalID = setInterval(
       () => this.updateIndex(),
-      this.state.characterDelay
+      this.props.characterDelay
     );
   }
 
   render() {
     return (
       <React.Fragment>
-        {this.state.isFinished ? (
-          this.state.text
+        {this.state.index === this.props.children.length ? (
+          this.props.children
         ) : (
           <React.Fragment>
-            {this.state.text.substring(0, this.state.index)}
+            {this.props.children.substring(0, this.state.index)}
             <Cursor />
           </React.Fragment>
         )}
