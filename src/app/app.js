@@ -3,18 +3,18 @@ import classNames from 'classnames';
 
 import './Raleway-Light.ttf';
 
-import Typing from './typing';
+import Header from './header';
 
 import style from './app.css';
 
 class App extends React.Component {
   state = {
-    headerTexts: [
+    headers: [
       "Hi, I'm Aki. this is my website. Learn more about me below.",
       'Aki Gao - 1 search result',
       'Aki Gao - 0 search result',
     ],
-    headerTextsIndex: 0,
+    headerIndex: 0,
     pages: ['about', 'resume', 'projects'],
     renderInput: false,
   };
@@ -43,15 +43,15 @@ class App extends React.Component {
 
     if (didAutoComplete) {
       this.setState({
-        headerTextsIndex: 1,
+        headerIndex: 1,
       });
     } else if (event.target.value !== '') {
       this.setState({
-        headerTextsIndex: 2,
+        headerIndex: 2,
       });
     } else {
       this.setState({
-        headerTextsIndex: 0,
+        headerIndex: 0,
       });
     }
   };
@@ -69,19 +69,12 @@ class App extends React.Component {
 
     return (
       <div className={style.container}>
-        <div className={style.header}>
-          {this.state.renderInput ? (
-            this.state.headerTexts[this.state.headerTextsIndex]
-          ) : (
-            <Typing
-              characterDelay={50}
-              punctuationDelay={500}
-              onCompleteTyping={this.renderInput}
-            >
-              {this.state.headerTexts[0]}
-            </Typing>
-          )}
-        </div>
+        <Header
+          completeTyping={this.state.renderInput}
+          onCompleteTyping={this.renderInput}
+        >
+          {this.state.headers[this.state.headerIndex]}
+        </Header>
         <input
           className={searchBar}
           type="text"

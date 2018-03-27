@@ -1,11 +1,8 @@
+@import url('variables.css');
+
 @font-face {
   font-family: Raleway;
   src: url('./Raleway-Light.ttf');
-}
-
-:root {
-  --width: 50vw;
-  --min-width: 550px;
 }
 
 html {

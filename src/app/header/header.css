@@ -1,0 +1,8 @@
+@import url('../variables.css');
+
+div.header {
+  width: var(--width);
+  min-width: var(--min-width);
+  font-size: 1.2em;
+  margin-bottom: 5px;
+}
