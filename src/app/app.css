@@ -35,13 +35,6 @@ div.container {
   align-items: center;
 }
 
-div.header {
-  width: var(--width);
-  min-width: var(--min-width);
-  font-size: 1.2em;
-  margin-bottom: 5px;
-}
-
 input.searchBar {
   width: var(--width);
   min-width: var(--min-width);
