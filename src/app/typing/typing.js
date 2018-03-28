@@ -8,9 +8,7 @@ class Typing extends React.Component {
   };
 
   componentDidMount() {
-    if (!this.props.isFinished) {
-      this.typeCharacter();
-    }
+    this.typeCharacter();
   }
 
   componentDidUpdate() {
