@@ -16,7 +16,7 @@ class App extends React.Component {
     ],
     headerIndex: 0,
     pages: ['about', 'resume', 'projects'],
-    renderInput: false,
+    typingComplete: true,
   };
 
   onInputKeyUp = event => {
@@ -56,22 +56,22 @@ class App extends React.Component {
     }
   };
 
-  renderInput = () => {
-    this.setState({ renderInput: true });
+  onCompleteTyping = () => {
+    this.setState({ typingComplete: true });
     this.searchBar.focus();
   };
 
   render() {
     const searchBar = classNames({
       [style.searchBar]: true,
-      [style.hide]: this.state.renderInput ? false : true,
+      [style.hide]: this.state.typingComplete ? false : true,
     });
 
     return (
       <div className={style.container}>
         <Header
-          completeTyping={this.state.renderInput}
-          onCompleteTyping={this.renderInput}
+          typingComplete={this.state.typingComplete}
+          onCompleteTyping={this.onCompleteTyping}
         >
           {this.state.headers[this.state.headerIndex]}
         </Header>
