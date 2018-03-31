@@ -4,20 +4,27 @@ import Typing from '../typing';
 
 import style from './header.css';
 
-const header = ({ children: text, typingComplete, onCompleteTyping }) => (
-  <div className={style.header}>
-    {typingComplete ? (
-      text
-    ) : (
-      <Typing
-        characterDelay={50}
-        punctuationDelay={500}
-        onCompleteTyping={onCompleteTyping}
-      >
-        {text}
-      </Typing>
-    )}
-  </div>
-);
+class Header extends React.Component {
+  componentDidUpdate() {
+    console.log('did update');
+  }
+  render() {
+    return (
+      <div className={style.header}>
+        {this.props.typingComplete ? (
+          this.props.children
+        ) : (
+          <Typing
+            characterDelay={50}
+            punctuationDelay={500}
+            onCompleteTyping={this.props.onCompleteTyping}
+          >
+            {this.props.children}
+          </Typing>
+        )}
+      </div>
+    );
+  }
+}
 
-export default header;
+export default Header;
