@@ -6,3 +6,8 @@ div.header {
   font-size: 1.2em;
   margin-bottom: 5px;
 }
+
+.enter {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
