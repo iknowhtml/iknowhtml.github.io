@@ -1,16 +1,33 @@
 import React from 'react';
+import { findDOMNode } from 'react-dom';
+
+import classNames from 'classnames';
 
 import Typing from '../typing';
 
 import style from './header.css';
 
 class Header extends React.Component {
-  componentDidUpdate() {
-    console.log('did update');
+  state = {
+    active: true,
+  };
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.children !== this.props.children) {
+      this.setState({ active: false }, () => {
+        findDOMNode(this).offsetHeight;
+        this.setState({ active: true });
+      });
+    }
   }
+
   render() {
+    const header = classNames(style.header, {
+      [style.active]: this.state.active,
+    });
+
     return (
-      <div className={style.header}>
+      <div className={header}>
         {this.props.typingComplete ? (
           this.props.children
         ) : (
