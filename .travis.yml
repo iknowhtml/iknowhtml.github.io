@@ -15,7 +15,7 @@ deploy:
   github_token: $GITHUB_TOKEN
   local_dir: ./
   on:
-    branch: dev-master
+    branch: prod
 # safelist
 branches:
   only:
