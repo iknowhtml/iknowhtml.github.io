@@ -16,7 +16,7 @@ class App extends React.Component {
     ],
     headerIndex: 0,
     pages: ['about', 'resume', 'projects'],
-    typingComplete: true,
+    typingComplete: false,
   };
 
   onInputKeyUp = event => {
