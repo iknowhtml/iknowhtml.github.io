@@ -47,9 +47,7 @@ input.searchBar {
   opacity: 1;
   transition: visibility 0s, opacity 0.5s linear;
 
-  &:focus {
-    outline: none;
-  }
+  outline: none;
 }
 
 .hide {
