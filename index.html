@@ -12,23 +12,21 @@
   <div id="container">
     <div id="header">
       <h1>
-          <span id="header-text"></span><span id="cursor">|</span>
-        </h1>
+        <span id="header-text"></span><span id="cursor">|</span>
+      </h1>
       <input type="text" id="search-bar" autocomplete="off" placeholder="e.g., about, resume, projects"></input>
     </div>
     <div id="about">
       <h2>
-          Hey there! I'm a Javascript Engineer with a passion for technology and innovation.
-          In particular, I specialize in web application development using a React and Node.js stack. <br />
-          <br />
-          I'm currently interested in Cryptocurrency, Blockchain, Web 3.0 and their implications for society.
-          <br />
-          My personal mission is to create a more compassionate and humancentric future, and in my spare time, I enjoy learning about the latest Web and Blockchain trends and technologies, as well as Philosophy. <br />
-          When I'm not coding or learning, I enjoy listening to electronic music, dancing, and lifting heavy stuff at the gym.
-          <br />
-          <br />
-          To contact me, email me at <a href="mailto:iknowsmtp@gmail.com"><em>iknowsmtp@gmail.com</em></a>.
-          Also check out my <a href="https://github.com/iknowhtml"><em>Github</em></a> and <a href="https://www.linkedin.com/in/aki-gao-a0065697"><em>LinkedIn</em></a>!
+        Hey there! I'm a Full Stack JavaScript developer with a passion for technology and innovation. In particular, I specialize
+        in developing scalable and maintainable web applications using the React and Node ecosystems. <br />
+        <br /> I'm currently passionate about Blockchain, Web 3.0, Philosophy and how to leverage them to best create a more
+        compassionate and humancentric future. <br/>
+        <br /> When I'm not coding, learning or thinking about the next app thats <i>definitely</i> going to disrupt the
+        (insert industry here) space, I enjoy jamming out to electronic music, housing, popping and hip hop dancing, and
+        figuring out new ways to burn down my kitchen. <br/>
+        <br /> To contact me, email me at <a href="mailto:xiaoyu.akihiro.gao@gmail.com"><em>xiaoyu.akihiro.gao@gmail.com</em></a>.
+        Also check out my <a href="https://github.com/iknowhtml"><em>Github</em></a> and <a href="https://www.linkedin.com/in/iknowhtml/"><em>LinkedIn</em></a>!
       </h2>
     </div>
     <div id="resume">
@@ -36,57 +34,92 @@
       <h3><a href="https://iknowhtml.github.io/resume/cv.pdf" download="Xiaoyu A. Gao Resume.pdf">DOWNLOAD</a></h3>
     </div>
     <div id="projects">
-      <h2><a href="https://iknowhtml.github.io/resume" target="_blank">Resume</a></h2>
+      <h2><a href="https://github.com/iknowhtml/iknowhtml.github.io" target="_blank">Personal Site (Work in Progress)</a></h2>
       <p>
-        Fully responsive resume written entirely in HTML and SCSS. Created to afford ease in modifying content and formatting, as well as in order to integrate seemlessly in my personal site. Try resizing it! Project also incorporates a custom Node script that
-        converts the HTML and CSS into PDF format for documentation purposes.
+        A reimplementation of my personal site using React, Reach Router, React Transition Group, CSS Modules, PostCSS and CSSNext
+        on the client side, and server side rendering and code splitting on the back end with Node and Express. Uses the
+        composable Webpack configuration below. Deployed on a Docker container to Google Cloud Platform using Travis.
       </p>
       <hr>
-      <h2><a href="https://github.com/iknowhtml/hokuchi-kun">Hokuchi-Kun</a></h2>
+      <h2><a href="https://github.com/iknowhtml/resume" target="_blank">Resume (Work in Progress)</a></h2>
       <p>
-        A bot to automate swiping on the Tinder dating app written in Node.js with ES7. Uses a custom fork of the Tinder NPM package to interact with the Tinder API, and a Facebook authentication library implemented from scratch using PhantomJS to scrape the
-        token from the appropriate Facebook page.
+        A reimplementation of my resume written entirely in CSS using flex box and CSS grid. Webpack used as a development environment
+        and build tool to to convert proposal level CSS into browser compliant CSS using PostCSS and CSSNext. Uses the composable
+        Webpack configuration below.
       </p>
       <hr>
-      <h2><a href="https://github.com/MoguraMiner">Mogura</a></h2>
+      <h2><a href="https://github.com/iknowhtml/webpack" target="_blank">Composable Webpack Configuration</a></h2>
       <p>
-        An AWS-based cloud cryptocurrency mining operation using an EC2 Spot Fleet to mine. The mining P2 spot instances are managed as a Spot Fleet and the bid price is dynamically updated to order to insure profitability using the a Node application and the
-        AWS SDK. Terraform is used to provision and configure the infrastructure. The project also leverages Packer to build AMIs preinstalled with necessary software for mining. <em>Deprecated.</em>
+        A fully composable set of Webpack configuration utilities using functional programming paradigms. Actively used across all
+        current React projects.
       </p>
       <hr>
-      <h2><a href="https://github.com/ManekiBoto">ManekiBoto</a></h2>
+      <h2><a href="https://github.com/iknowhtml/react-template" target="_blank">React Boilerplate Template</a></h2>
       <p>
-        A cryptocurrency arbitrage bot for automating cryptocurrency trading between various markets. Uses a collection of custom API libraries for pulling public data, as well as programatically initiating trades on Poloniex and Kraken. Leverages a custom algorithm
-        to determine maximum profitability between currency pairs and markets. Written entirely in Node.js. <em>Deprecated.</em>
+        A React boilerplate template with a development server and linting set up. Uses the composable Webpack configuration above.
       </p>
       <hr>
-      <h2><a href="https://uva-lambdas.github.io/">Lambdas at UVA Website</a></h2>
+      <h2><a href="https://github.com/iknowhtml/erc-20" target="_blank">ERC-20 Token and Crowdsale Implementation</a></h2>
       <p>
-        The official home page of Lambda Phi Epsilon, Alpha Tau Chapter, at the University of Virginia! Designed with Sketch and written as an SPA with React and styled using CSS4 through PostCSS and CSSNext. Deployed to Github pages with Travis to automate the
-        build. Still in progress, but check out the <a href="https://uva-lambdas.github.io/website-design/"><em>mockup</em></a>!
+        A ERC-20 token and crowdsale boilerplate implementation written in Solidity using Truffle with complete test coverage written
+        using Chai and ran with Mocha.
       </p>
       <hr>
-      <h2><a href="#">Personal Website</a></h2>
+      <h2><a href="https://github.com/iknowhtml/hokuchi-kun" target="_blank">Hokuchi-Kun</a></h2>
+      <p>
+        A bot to automate swiping on the Tinder dating app written in Node.js with ES7. Uses a custom fork of the Tinder NPM package
+        to interact with the Tinder API, and a Facebook authentication library implemented from scratch using PhantomJS to
+        scrape the token from the appropriate Facebook page.
+      </p>
+      <hr>
+      <h2><a href="https://github.com/MoguraMiner" target="_blank">Mogura (Deprecated)</a></h2>
+      <p>
+        An AWS-based cloud cryptocurrency mining operation using an EC2 Spot Fleet to mine. The mining P2 spot instances are managed
+        as a Spot Fleet and the bid price is dynamically updated to order to insure profitability using the a Node application
+        and the AWS SDK. Terraform is used to provision and configure the infrastructure. The project also leverages Packer
+        to build AMIs preinstalled with necessary software for mining. <em>Deprecated.</em>
+      </p>
+      <hr>
+      <h2><a href="https://github.com/ManekiBoto" target="_blank">ManekiBoto (Deprecated)</a></h2>
+      <p>
+        A cryptocurrency arbitrage bot for automating cryptocurrency trading between various markets. Uses a collection of custom
+        API libraries for pulling public data, as well as programatically initiating trades on Poloniex and Kraken. Leverages
+        a custom algorithm to determine maximum profitability between currency pairs and markets. Written entirely in Node.js.
+        <em>Deprecated.</em>
+      </p>
+      <hr>
+      <h2><a href="https://uva-lambdas.github.io/" target="_blank">Lambdas at UVA Website (Work in Progress)</a></h2>
+      <p>
+        The official home page of Lambda Phi Epsilon, Alpha Tau Chapter, at the University of Virginia! Designed with Sketch and
+        written as an SPA with React and styled using CSS4 through PostCSS and CSSNext. Deployed to Github pages with Travis
+        to automate the build. Still in progress, but check out the <a href="https://uva-lambdas.github.io/website-design/"><em>mockup</em></a>!
+      </p>
+      <hr>
+      <h2><a href="https://github.com/iknowhtml/iknowhtml.github.io/tree/prod">Personal Website (Deprecated)</a></h2>
       <p>
         This website is written entirely in vanilla Javascript and HTML5/CSS3! Deployed to Github pages using Travis.
       </p>
       <hr>
       <h2><a href="http://iknowhtml.github.io/blog-app" target="_blank">Blog Application</a></h2>
       <p>
-        A simple blog application implemented with React, Redux, React Router and Redux Form to familiarize myself with the React/Redux ecosystem! Deployment to Github pages automated with Travis and uses a custom solution for deploying project to Github pages
-        as an Single Page Application.
+        A simple blog application implemented with React, Redux, React Router and Redux Form to familiarize myself with the React/Redux
+        ecosystem! Deployment to Github pages automated with Travis and uses a custom solution for deploying project to Github
+        pages as an Single Page Application.
       </p>
       <hr>
       <h2><a href="http://iknowhtml.github.io/kanban-app" target="_blank">Kanban Application</a></h2>
       <p>
-        A Kanban application made to learn React and Redux, which were used to implement the view and data managment respectively. Drag and drop functionality created using React DnD
+        A Kanban application made to learn React and Redux, which were used to implement the view and data managment respectively.
+        Drag and drop functionality created using React DnD
       </p>
       <hr>
-      <h2><a href="https://devpost.com/software/perish-5hvgm9" target="_blank">Perish</a></h2>
+      <h2><a href="https://iknowhtml.github.io/resume" target="_blank">Resume (Deprecated)</a></h2>
       <p>
-        A RESTful API for anonymous and temporary file storage. Implemented in Rails, files are hashed using SHA256 and the digest is used as an unique ID for downloading the file. Files are also encrypted using AES256 and then stored on AWS S3. Winner of the
-        First API | Summer Jam Hackathon!
+        Fully responsive resume written entirely in HTML and SCSS. Created to afford ease in modifying content and formatting, as
+        well as in order to integrate seemlessly in my personal site. Try resizing it! Project also incorporates a custom
+        Node script that converts the HTML and CSS into PDF format for documentation purposes.
       </p>
+      <hr>
     </div>
   </div>
 </body>
