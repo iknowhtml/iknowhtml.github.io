@@ -1,4 +1,5 @@
+dist
 /node_modules
-*log
-/dist
+yarn-error.log
+.vscode
 .DS_Store

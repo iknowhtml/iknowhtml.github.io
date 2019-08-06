@@ -1,17 +1,21 @@
 module.exports = {
-  parser: 'babel-eslint',
   parserOptions: {
-    ecmaVersion: 8,
+    ecmaVersion: 9,
     sourceType: 'module',
-    ecmaFeatures: {
-      modules: true,
-    },
   },
-  extends: [],
-  rules: {},
-  plugins: ['react', 'jsx-a11y', 'import'],
+  plugins: ['prettier', 'react', 'jsx-a11y'],
+  extends: [
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:jsx-a11y/recommended',
+  ],
+  rules: {
+    'prettier/prettier': ['error'],
+    'comma-dangle': ['error', 'always-multiline'],
+  },
   env: {
-    browser: true,
     node: true,
+    browser: true,
+    jest: true,
   },
 };
