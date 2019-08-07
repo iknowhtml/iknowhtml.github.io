@@ -13,7 +13,7 @@ const webpackConfiguration = () => ({
   entry: path.resolve('src', 'index.js'),
   output: {
     path: path.resolve('dist'),
-    filename: '[name].bundle.[hash].js',
+    filename: isProduction ? '[name].bundle.[hash].js' : '[name].js',
   },
   // Configures Loaders
   module: {
