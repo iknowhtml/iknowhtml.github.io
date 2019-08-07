@@ -31,7 +31,7 @@ const webpackConfiguration = () => ({
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              hmr: isProduction,
+              hmr: !isProduction,
               reloadAll: true,
             },
           },
@@ -48,6 +48,18 @@ const webpackConfiguration = () => ({
           'postcss-loader',
         ],
       },
+      {
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'fonts/',
+            },
+          },
+        ],
+      },
     ],
   },
   // Configures Plugins
@@ -56,7 +68,7 @@ const webpackConfiguration = () => ({
     new HtmlWebpackPlugin({
       title: '',
       template: HtmlWebpackTemplate,
-      appMountId: 'app',
+      appMountId: 'root',
       minify: isProduction
         ? {
             collapseWhitespace: true,
@@ -98,6 +110,7 @@ const webpackConfiguration = () => ({
       chunks: 'all',
     },
   },
+  devtool: isProduction ? false : 'eval-source-map',
   //Configures Webpack DevServer
   devServer: {
     port: 8080,
