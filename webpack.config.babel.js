@@ -26,15 +26,25 @@ const webpackConfiguration = () => ({
         },
       },
       {
-        test: /.css$/,
+        test: /.(post)?css$/,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
               hmr: isProduction,
+              reloadAll: true,
             },
           },
-          'css-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: {
+                localIdentName: isProduction
+                  ? '[hash:base64:5]'
+                  : '[path][name]__[local]',
+              },
+            },
+          },
           'postcss-loader',
         ],
       },
