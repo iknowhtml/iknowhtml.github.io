@@ -58,7 +58,21 @@ const webpackConfiguration = () => ({
           }
         : false,
       hash: isProduction,
-      //Prevents automatic injection of CSS & HTML into template.
+      //Prevents automatic injection of CSS & JS into template.
+      inject: false,
+    }),
+    new HtmlWebpackPlugin({
+      filename: '404.html',
+      template: path.resolve('src', '404.html'),
+      minify: {
+        collapseWhitespace: true,
+        removeComments: true,
+        removeRedundantAttributes: true,
+        removeScriptTypeAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        useShortDoctype: true,
+      },
+      //Prevents automatic injection of CSS & JS into template.
       inject: false,
     }),
     new MiniCssExtractPlugin({
