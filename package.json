@@ -3,10 +3,13 @@
     "start": "sleep 5s && open http://localhost:8080 & nodemon --watch webpack.config.babel.js --exec \"NODE_ENV=\"development\" webpack-dev-server --watch\"",
     "build": "yarn clean && NODE_ENV=production webpack --progress --colors --mode production",
     "test": "jest",
+    "lint": "eslint --fix src __test__",
     "clean": "rm -rf dist/*"
   },
   "jest": {
-    "setupFiles":["./__test__/setupTests.js"]
+    "setupFiles": [
+      "./__test__/setupTests.js"
+    ]
   },
   "devDependencies": {
     "@babel/cli": "^7.5.5",
@@ -46,6 +49,7 @@
     "webpack-dev-server": "^3.7.2"
   },
   "dependencies": {
+    "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   }
