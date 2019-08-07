@@ -22,6 +22,10 @@ body {
   align-items: center;
 }
 
+#root {
+  width: 60vw;
+}
+
 /* Header Styling */
 h1 {
   font-size: 1.25rem;
@@ -36,8 +40,14 @@ input {
   border-style: none none solid none;
   border-width: thin;
   outline: none;
+  opacity: 1;
 
-  animation: fadein 1s;
+  transition: opacity 0.75s linear;
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
 }
 
 @keyframes fadein {
