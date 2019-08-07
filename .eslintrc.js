@@ -18,4 +18,9 @@ module.exports = {
     browser: true,
     jest: true,
   },
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
 };
