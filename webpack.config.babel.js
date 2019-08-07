@@ -98,6 +98,10 @@ const webpackConfiguration = () => ({
       warnings: true,
       errors: true,
     },
+    contentBase: path.resolve('dist'),
+    historyApiFallback: {
+      index: '/404.html',
+    },
   },
 });
 
