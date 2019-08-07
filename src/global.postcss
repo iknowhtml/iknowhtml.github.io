@@ -1,0 +1,65 @@
+/* Basic CSS Reset */
+* {
+  padding: 0;
+  margin: 0;
+}
+
+/* Global Styling */
+*::selection {
+  color: white;
+  background-color: black;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Header Styling */
+h1 {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+/* Input Navigation Styling */
+input {
+  width: 100%;
+  font-size: 1.5rem;
+  border-color: #e6e6e6;
+  border-style: none none solid none;
+  border-width: thin;
+  outline: none;
+
+  animation: fadein 1s;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Cursor Styling */
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+span {
+  animation: blink 0.75s step-end infinite;
+
+  &:before {
+    content: '|';
+  }
+}
