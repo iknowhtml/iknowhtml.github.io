@@ -44,6 +44,7 @@
     "stylelint-config-standard": "^18.3.0",
     "stylelint-prettier": "^1.1.1",
     "terser-webpack-plugin": "^1.4.1",
+    "typeface-raleway": "^0.0.75",
     "webpack": "^4.39.1",
     "webpack-cli": "^3.3.6",
     "webpack-dev-server": "^3.7.2"
