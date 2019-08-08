@@ -5,7 +5,7 @@ const useIsTypingComplete = () => {
   const [state, updateState] = useContext(StateContext);
 
   const updateIsTypingComplete = isTypingComplete =>
-    updateState({ ...state, isTypingComplete });
+    updateState(prevState => ({ ...prevState, isTypingComplete }));
 
   return [state.isTypingComplete, updateIsTypingComplete];
 };

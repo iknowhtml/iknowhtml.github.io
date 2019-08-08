@@ -4,7 +4,7 @@ import { StateContext } from '../state';
 const usePath = () => {
   const [state, updateState] = useContext(StateContext);
 
-  const updatePath = path => updateState({ ...state, path });
+  const updatePath = path => updateState(prevState => ({ ...prevState, path }));
 
   return [state.path, updatePath];
 };
