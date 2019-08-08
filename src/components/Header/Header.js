@@ -16,9 +16,9 @@ const Header = () => {
   const [headerText, updateHeaderText] = useState(welcomeMessage);
 
   useEffect(() => {
-    if (path === '/') {
+    if (path === '') {
       updateHeaderText(welcomeMessage);
-    } else if (/^\/(about|resume|projects)$/.test(path)) {
+    } else if (/^(about|resume|projects)$/.test(path)) {
       updateHeaderText(pageFoundMessage);
     } else {
       updateHeaderText(pageNotFoundMessage);
