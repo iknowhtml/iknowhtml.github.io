@@ -30,6 +30,25 @@ div {
 h1 {
   font-size: 1.25rem;
   font-weight: 300;
+  transition: opacity 75ms ease;
+}
+
+.enter {
+  opacity: 0;
+}
+
+.enterActive {
+  opacity: 1;
+  transition: all 400ms;
+}
+
+.exit {
+  opacity: 1;
+}
+
+.exitActive {
+  opacity: 0;
+  transition: all 400ms;
 }
 
 /* Input Navigation Styling */
