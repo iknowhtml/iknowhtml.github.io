@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const initialState = {
   isTypingComplete: false,
-  path: '/',
+  path: '',
 };
 
 const StateContext = createContext();
