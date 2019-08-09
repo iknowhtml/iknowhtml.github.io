@@ -14,35 +14,35 @@ const welcomeMessage =
 const pageFoundMessage = 'Aki Gao - 1 search result';
 const pageNotFoundMessage = 'Aki Gao - 0 search results';
 
-const Header = () => {
+const Navigation = () => {
   const [isTypingComplete] = useIsTypingComplete();
   const [path] = usePath();
 
-  const [headerText, updateHeaderText] = useState(welcomeMessage);
+  const [headerText, updateNavigationText] = useState(welcomeMessage);
 
   useEffect(() => {
     if (path === '') {
       if (headerText !== welcomeMessage) {
-        updateHeaderText(welcomeMessage);
+        updateNavigationText(welcomeMessage);
       }
     } else if (/^(about|resume|projects)$/.test(path)) {
       if (headerText !== pageFoundMessage) {
-        updateHeaderText(pageFoundMessage);
+        updateNavigationText(pageFoundMessage);
       }
     } else {
       if (headerText !== pageNotFoundMessage) {
-        updateHeaderText(pageNotFoundMessage);
+        updateNavigationText(pageNotFoundMessage);
       }
     }
   }, [path]);
 
   return (
-    <header>
+    <navigation>
       {isTypingComplete ? (
         <SwitchTransition>
           <CSSTransition
             key={path}
-            timeout={450}
+            timeout={300}
             classNames={{ enter, enterActive, exit, exitActive }}
           >
             <h1>{headerText}</h1>
@@ -50,14 +50,14 @@ const Header = () => {
         </SwitchTransition>
       ) : (
         <h1>
-          <Typing characterDelay={50} punctuationDelay={500}>
+          <Typing characterDelay={35} punctuationDelay={500}>
             {headerText}
           </Typing>
         </h1>
       )}
       <NavigationInput />
-    </header>
+    </navigation>
   );
 };
 
-export default Header;
+export default Navigation;

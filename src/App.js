@@ -1,8 +1,8 @@
 import React from 'react';
-import Header from './components/Header';
+import Navigation from './components/Navigation';
 
 const App = () => {
-  return <Header></Header>;
+  return <Navigation></Navigation>;
 };
 
 export default App;
