@@ -7,7 +7,6 @@ const pages = ['about', 'resume', 'projects'];
 
 const NavigationInput = () => {
   const [autoCompleteTimeoutID, updateAutoCompleteTimeoutID] = useState(null);
-  const [autoCompleteStartIndex, updateAutoCompleteStartIndex] = useState(-1);
 
   const [isTypingComplete] = useIsTypingComplete();
   const [path, updatePath] = usePath();
@@ -20,31 +19,20 @@ const NavigationInput = () => {
     }
   }, [isTypingComplete]);
 
-  useEffect(() => {
-    pages.forEach(page => {
-      if (path === page) {
-        inputElement.current.setSelectionRange(
-          autoCompleteStartIndex,
-          path.length
-        );
-      }
-    });
-  }, [path]);
-
   const handleOnChange = event => {
     updatePath(event.target.value);
     clearTimeout(autoCompleteTimeoutID);
     pages.forEach(page => {
-      const regExp = new RegExp(`^${event.target.value}`);
+      const termRegExp = new RegExp(`^${event.target.value}`);
       if (
-        regExp.test(page) &&
+        termRegExp.test(page) &&
         event.nativeEvent.inputType !== 'deleteContentBackward'
       ) {
         const startIndex = event.target.value.length;
         updateAutoCompleteTimeoutID(
           setTimeout(() => {
-            updateAutoCompleteStartIndex(startIndex);
             updatePath(page);
+            inputElement.current.setSelectionRange(startIndex, page.length);
           }, 300)
         );
       }
