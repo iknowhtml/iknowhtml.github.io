@@ -1,6 +1,6 @@
-# Aki Gao's Personal Site [![Build Status](https://travis-ci.org/iknowhtml/iknowhtml.github.io.png?branch=master)](https://travis-ci.org/iknowhtml/iknowhtml.github.io)
+# Aki Gao's Personal Site
 
-Personal Website For Aki Gao. Written in React.
+Personal Website For Aki Gao. built with Webpack, React using the Hooks & Context API, Reach Router and React Transition Groups.
 
 ## To use this site, run the following commands in the terminal:
 
@@ -10,5 +10,3 @@ cd iknowhtml.github.io
 yarn install
 yarn start
 ```
-
-Then go to `localhost:8080` to view site.
