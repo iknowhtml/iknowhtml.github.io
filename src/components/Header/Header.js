@@ -1,8 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import { CSSTransition, SwitchTransition } from 'react-transition-group';
+
 import NavigationInput from './NavigationInput';
 import Typing from '../Typing';
+
 import useIsTypingComplete from '../../utils/effects/useIsTypingComplete';
 import usePath from '../../utils/effects/usePath';
+
+import { enter, enterActive, exit, exitActive } from '../../global.postcss';
 
 const welcomeMessage =
   'Hi, my name is Aki. Welcome to my website. Learn more about me below.';
@@ -17,23 +22,39 @@ const Header = () => {
 
   useEffect(() => {
     if (path === '') {
-      updateHeaderText(welcomeMessage);
+      if (headerText !== welcomeMessage) {
+        updateHeaderText(welcomeMessage);
+      }
     } else if (/^(about|resume|projects)$/.test(path)) {
-      updateHeaderText(pageFoundMessage);
+      if (headerText !== pageFoundMessage) {
+        updateHeaderText(pageFoundMessage);
+      }
     } else {
-      updateHeaderText(pageNotFoundMessage);
+      if (headerText !== pageNotFoundMessage) {
+        updateHeaderText(pageNotFoundMessage);
+      }
     }
   }, [path]);
 
-  useEffect(() => {}, [isTypingComplete]);
-
   return (
     <header>
-      <h1>
-        <Typing characterDelay={50} punctuationDelay={500}>
-          {headerText}
-        </Typing>
-      </h1>
+      {isTypingComplete ? (
+        <SwitchTransition>
+          <CSSTransition
+            key={path}
+            timeout={450}
+            classNames={{ enter, enterActive, exit, exitActive }}
+          >
+            <h1>{headerText}</h1>
+          </CSSTransition>
+        </SwitchTransition>
+      ) : (
+        <h1>
+          <Typing characterDelay={50} punctuationDelay={500}>
+            {headerText}
+          </Typing>
+        </h1>
+      )}
       <NavigationInput />
     </header>
   );
