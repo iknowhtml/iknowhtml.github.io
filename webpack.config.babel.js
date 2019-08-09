@@ -66,7 +66,9 @@ const webpackConfiguration = () => ({
   plugins: [
     new HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
-      title: '',
+      title: 'Aki Gao',
+      lang: 'en',
+      mobile: true,
       template: HtmlWebpackTemplate,
       appMountId: 'root',
       minify: isProduction
