@@ -1,6 +1,7 @@
 import React from 'react';
 import { Router, Location } from '@reach/router';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { PropTypes } from 'prop-types';
 import {
   enter,
   enterActive,
@@ -24,4 +25,7 @@ const FadeTransitionRouter = ({ children }) => (
   </Location>
 );
 
+FadeTransitionRouter.propTypes = {
+  children: PropTypes.arrayOf(PropTypes.element),
+};
 export default FadeTransitionRouter;
