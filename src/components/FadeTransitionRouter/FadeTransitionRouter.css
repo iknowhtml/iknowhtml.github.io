@@ -1,0 +1,26 @@
+/* Page container styling  */
+main {
+  padding-top: 1rem;
+}
+
+.enter {
+  opacity: 0;
+  max-height: 0;
+}
+
+.enterActive {
+  opacity: 1;
+  max-height: 100%;
+  transition: all 750ms;
+}
+
+.exit {
+  opacity: 1;
+  max-height: 100%;
+}
+
+.exitActive {
+  opacity: 0;
+  max-height: 0;
+  transition: all 500ms;
+}
