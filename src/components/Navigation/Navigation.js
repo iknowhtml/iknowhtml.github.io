@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 
-import { hidden } from '../../global.postcss';
+import { hidden } from './Navigation.css';
 import useIsTypingComplete from '../../utils/effects/useIsTypingComplete';
 import usePath from '../../utils/effects/usePath';
 
@@ -20,21 +20,21 @@ const NavigationInput = () => {
     }
   }, [isTypingComplete]);
 
-  const handleOnChange = event => {
+  const onInputChange = event => {
     updatePath(event.target.value);
-    clearTimeout(autoCompleteTimeoutID);
     pages.forEach(page => {
-      const termRegExp = new RegExp(`^${event.target.value}`);
+      const termRegExp = new RegExp(`^${encodeURI(event.target.value)}`);
       if (
         termRegExp.test(page) &&
         event.nativeEvent.inputType !== 'deleteContentBackward'
       ) {
+        clearTimeout(autoCompleteTimeoutID);
         const startIndex = event.target.value.length;
         updateAutoCompleteTimeoutID(
           setTimeout(() => {
             updatePath(page);
             inputElement.current.setSelectionRange(startIndex, page.length);
-          }, 300)
+          }, 200)
         );
       }
     });
@@ -47,7 +47,7 @@ const NavigationInput = () => {
         type="text"
         placeholder="e.g., about, resume, projects"
         value={path}
-        onChange={handleOnChange}
+        onChange={onInputChange}
         className={isTypingComplete ? null : hidden}
       />
     </nav>

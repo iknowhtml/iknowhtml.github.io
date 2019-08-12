@@ -1,0 +1,7 @@
+iframe {
+  width: 100vw;
+  height: 70vh;
+  border: none;
+  position: relative;
+  right: 33%;
+}

@@ -6,7 +6,7 @@ import Typing from '../Typing';
 import useIsTypingComplete from '../../utils/effects/useIsTypingComplete';
 import usePath from '../../utils/effects/usePath';
 
-import { enter, enterActive, exit, exitActive } from '../../global.postcss';
+import { enter, enterActive, exit, exitActive } from './Header.css';
 
 const welcomeMessage =
   'Hi, my name is Aki. Welcome to my website. Learn more about me below.';
@@ -41,7 +41,7 @@ const Header = () => {
         <SwitchTransition>
           <CSSTransition
             key={path}
-            timeout={300}
+            timeout={400}
             classNames={{ enter, enterActive, exit, exitActive }}
           >
             <h1>{headerText}</h1>
