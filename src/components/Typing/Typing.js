@@ -1,5 +1,8 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import { PropTypes } from 'prop-types';
+
+import { cursor } from './cursor.postcss';
+
 import useIsTypingComplete from '../../utils/effects/useIsTypingComplete';
 
 const Typing = ({ characterDelay, punctuationDelay, children }) => {
@@ -27,7 +30,7 @@ const Typing = ({ characterDelay, punctuationDelay, children }) => {
   ) : (
     <Fragment>
       {children.substring(0, index)}
-      <span />
+      <span className={cursor} />
     </Fragment>
   );
 };
