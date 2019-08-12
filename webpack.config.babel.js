@@ -25,8 +25,24 @@ const webpackConfiguration = () => ({
           loader: 'babel-loader',
         },
       },
+      // Extract global.postcss with parsing as CSS Module
+      {
+        test: /global.postcss$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              hmr: !isProduction,
+              reloadAll: true,
+            },
+          },
+          'css-loader',
+          'postcss-loader',
+        ],
+      },
       {
         test: /.(post)?css$/,
+        exclude: /global.postcss$/,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
