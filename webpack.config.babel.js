@@ -76,6 +76,7 @@ const webpackConfiguration = () => ({
           },
         ],
       },
+      { test: /\.md$/, use: 'raw-loader' },
     ],
   },
   // Configures Plugins
