@@ -22,73 +22,29 @@ body {
   align-items: center;
 }
 
-div {
+/* Root element styling */
+#root {
   width: 60vw;
 }
 
-/* Header Styling */
-h1 {
-  font-size: 1.25rem;
-  font-weight: 300;
-  transition: opacity 75ms ease;
-}
+/* Links styling */
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: black;
 
-.enter {
-  opacity: 0;
-}
-
-.enterActive {
-  opacity: 1;
-  transition: all 300ms;
-}
-
-.exit {
-  opacity: 1;
-}
-
-.exitActive {
-  opacity: 0;
-  transition: all 300ms;
-}
-
-/* Input Navigation Styling */
-input {
-  width: 100%;
-  font-size: 1.5rem;
-  border-color: #e6e6e6;
-  border-style: none none solid none;
-  border-width: thin;
-  outline: none;
-  opacity: 1;
-
-  transition: opacity 0.85s ease;
-}
-
-.hidden {
-  visibility: hidden;
-  opacity: 0;
-}
-
-@keyframes fadein {
-  from {
-    opacity: 0;
+  &:after {
+    display: block;
+    width: 0%;
+    height: 1px;
+    margin: auto;
+    content: '';
+    transition: all 0.125s;
+    background: black;
   }
-  to {
-    opacity: 1;
-  }
-}
 
-/* Cursor Styling */
-@keyframes blink {
-  50% {
-    opacity: 0;
-  }
-}
-
-span {
-  animation: blink 0.75s step-end infinite;
-
-  &:before {
-    content: '|';
+  &:hover:after {
+    width: 100%;
+    background: black;
   }
 }
