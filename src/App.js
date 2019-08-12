@@ -1,34 +1,44 @@
 import React, { useEffect, Fragment } from 'react';
-import { Router, navigate } from '@reach/router';
+import { navigate } from '@reach/router';
+
+import Header from './components/Header';
 import Navigation from './components/Navigation';
+import FadeTransitionRouter from './components/FadeTransitionRouter';
 import About from './pages/About';
 import Resume from './pages/Resume';
 import Projects from './pages/Projects';
-import Header from './components/Header';
+
+import './global.postcss';
+
 import usePath from './utils/effects/usePath';
+import useIsTypingComplete from './utils/effects/useIsTypingComplete';
 
 const App = () => {
   const [path, updatePath] = usePath();
+  const [, updateIsTypingComplete] = useIsTypingComplete();
 
   if (window.location.pathname === '/') {
     if (window.location.search !== '') {
+      updateIsTypingComplete(true);
       updatePath(window.location.search.substring(1));
     }
   }
 
+  const sanitizePath = path => encodeURI(path.replace(/^\/+/, ''));
+
   useEffect(() => {
-    navigate(`/${path}`);
+    navigate(`/${sanitizePath(path)}`);
   }, [path]);
 
   return (
     <Fragment>
       <Header />
       <Navigation />
-      <Router>
+      <FadeTransitionRouter>
         <About path="/about" />
-        <Resume path="/resume" />
-        <Projects path="/projects" />
-      </Router>
+        <Resume path="resume" />
+        <Projects path="projects" />
+      </FadeTransitionRouter>
     </Fragment>
   );
 };
