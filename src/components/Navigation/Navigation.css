@@ -12,6 +12,11 @@ input {
 
   transition: opacity 850ms ease;
 }
+@media (max-width: 640px), (max-width: 900px) and (orientation: landscape) {
+  input {
+    font-size: 1.5rem;
+  }
+}
 
 .hidden {
   visibility: hidden;
