@@ -12,7 +12,7 @@ jobs:
     working_directory: ~/iknowhtml.github.io
     branches:
       only:
-        -production
+        - production
     steps:
       - add_ssh_keys:
         fingerprints:
