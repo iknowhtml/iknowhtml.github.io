@@ -86,6 +86,12 @@ const webpackConfiguration = () => ({
       title: 'Aki Gao',
       lang: 'en',
       mobile: true,
+      meta: [
+        {
+          name: 'description',
+          content: 'Personal website for Aki Gao',
+        },
+      ],
       template: HtmlWebpackTemplate,
       appMountId: 'root',
       minify: isProduction
