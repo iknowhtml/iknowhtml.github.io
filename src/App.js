@@ -8,8 +8,6 @@ import About from './pages/About';
 import Resume from './pages/Resume';
 import Projects from './pages/Projects';
 
-import './global.postcss';
-
 import usePath from './utils/effects/usePath';
 import useIsTypingComplete from './utils/effects/useIsTypingComplete';
 
