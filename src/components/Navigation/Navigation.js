@@ -16,7 +16,9 @@ const NavigationInput = () => {
 
   useEffect(() => {
     if (isTypingComplete) {
-      inputElement.current.focus();
+      inputElement.current.addEventListener('transitionend', () =>
+        inputElement.current.focus()
+      );
     }
   }, [isTypingComplete]);
 
