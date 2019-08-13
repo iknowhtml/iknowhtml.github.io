@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import { CSSTransition, SwitchTransition } from 'react-transition-group';
 
 import Typing from '../Typing';
@@ -10,8 +10,16 @@ import { enter, enterActive, exit, exitActive } from './Header.css';
 
 const welcomeMessage =
   'Hi, my name is Aki. Welcome to my website. Learn more about me below.';
-const pageFoundMessage = 'Aki Gao - 1 search result';
-const pageNotFoundMessage = 'Aki Gao - 0 search results';
+const pageFoundMessage = (
+  <Fragment>
+    Aki Gao - <i>1 search result</i>
+  </Fragment>
+);
+const pageNotFoundMessage = (
+  <Fragment>
+    Aki Gao - <i>0 search results</i>
+  </Fragment>
+);
 
 const Header = () => {
   const [isTypingComplete] = useIsTypingComplete();
