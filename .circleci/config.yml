@@ -14,6 +14,10 @@ jobs:
       only:
         -production
     steps:
+      - add_ssh_keys:
+        fingerprints:
+          - "3d:49:45:46:91:75:7b:cd:e0:4d:13:f9:34:b5:15:5d"
+      
       - checkout
 
       - restore_cache:
