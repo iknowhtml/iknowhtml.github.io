@@ -1,14 +1,18 @@
 h2 {
   font-size: 1.25rem;
   font-weight: 300;
+  margin-bottom: 0.25rem;
 }
 
 h2 ~ p {
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 hr {
+  width: 15vw;
+  max-width: 200px;
   background: white;
   border: none;
   border-bottom: 1px solid #e6e6e6;
-  width: 20vw;
+  margin: auto;
+  margin-bottom: 0.75rem;
 }
