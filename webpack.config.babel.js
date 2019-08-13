@@ -92,6 +92,7 @@ const webpackConfiguration = () => ({
           content: 'Personal website for Aki Gao',
         },
       ],
+      favicon: path.resolve('src', 'static', 'favicon.png'),
       template: HtmlWebpackTemplate,
       appMountId: 'root',
       minify: isProduction
