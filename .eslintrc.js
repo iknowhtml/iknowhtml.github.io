@@ -1,6 +1,6 @@
 module.exports = {
   parserOptions: {
-    ecmaVersion: 9,
+    ecmaVersion: 10,
     sourceType: 'module',
   },
   plugins: ['prettier', 'react', 'jsx-a11y'],
