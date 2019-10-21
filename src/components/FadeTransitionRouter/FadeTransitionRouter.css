@@ -1,7 +1,6 @@
 /* Page container styling  */
 main {
   width: 100%;
-  max-height: 50vh;
   padding-top: 1rem;
   overflow: scroll;
 }
@@ -13,17 +12,23 @@ main {
 
 .enterActive {
   opacity: 1;
-  max-height: 100%;
+  max-height: 75vh;
+  transition: all 1250ms;
+}
+
+.enterActiveResume {
+  opacity: 1;
+  max-height: 75vh;
   transition: all 750ms;
 }
 
 .exit {
   opacity: 1;
-  max-height: 100%;
+  max-height: 75vh;
 }
 
 .exitActive {
   opacity: 0;
   max-height: 0;
-  transition: all 500ms;
+  transition: all 1000ms;
 }
