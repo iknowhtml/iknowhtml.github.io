@@ -49,7 +49,7 @@ const Header = () => {
         <SwitchTransition>
           <CSSTransition
             key={path}
-            timeout={400}
+            timeout={300}
             classNames={{ enter, enterActive, exit, exitActive }}
           >
             <h1>{headerText}</h1>
