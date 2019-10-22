@@ -76,6 +76,17 @@ const webpackConfiguration = () => ({
           },
         ],
       },
+      {
+        test: /CNAME$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name]',
+            },
+          },
+        ],
+      },
       { test: /\.md$/, use: 'raw-loader' },
     ],
   },
