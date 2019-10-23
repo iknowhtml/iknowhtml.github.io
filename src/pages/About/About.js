@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import content from './About.md';
-import './About.css';
+import './About.postcss';
 
 const About = () => {
   return (

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 
-import './Projects.css';
+import './Projects.postcss';
 
 import content from './Projects.md';
 
