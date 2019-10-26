@@ -8,7 +8,7 @@ import {
   enterActiveResume,
   exit,
   exitActive,
-} from './FadeTransitionRouter.css';
+} from './FadeTransitionRouter.postcss';
 import usePath from '../../utils/effects/usePath';
 
 const FadeTransitionRouter = ({ children }) => {
