@@ -16,7 +16,7 @@ const FadeTransitionRouter = ({ children }) => {
   return (
     <Location>
       {({ location }) => (
-        <SwitchTransition component={null}>
+        <SwitchTransition>
           <CSSTransition
             key={location.key}
             timeout={{ enter: path === 'resume' ? 750 : 1250, exit: 1000 }}
