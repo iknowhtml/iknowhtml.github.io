@@ -36,7 +36,7 @@ const NavigationInput = () => {
           setTimeout(() => {
             updatePath(page);
             inputElement.current.setSelectionRange(startIndex, page.length);
-          }, 200)
+          }, 150)
         );
       }
     });
