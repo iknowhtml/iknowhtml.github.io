@@ -5,7 +5,7 @@ import { PropTypes } from 'prop-types';
 import {
   enter,
   enterActive,
-  enterActiveResume,
+  enterActiveAbout,
   exit,
   exitActive,
 } from './FadeTransitionRouter.postcss';
@@ -19,10 +19,10 @@ const FadeTransitionRouter = ({ children }) => {
         <SwitchTransition>
           <CSSTransition
             key={location.key}
-            timeout={{ enter: path === 'resume' ? 750 : 1250, exit: 1000 }}
+            timeout={{ enter: path === 'about' ? 1250 : 750, exit: 1000 }}
             classNames={{
               enter,
-              enterActive: path === 'resume' ? enterActiveResume : enterActive,
+              enterActive: path === 'about' ? enterActiveAbout : enterActive,
               exit,
               exitActive,
             }}
