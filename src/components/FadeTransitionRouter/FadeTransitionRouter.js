@@ -19,7 +19,7 @@ const FadeTransitionRouter = ({ children }) => {
         <SwitchTransition>
           <CSSTransition
             key={location.key}
-            timeout={{ enter: path === 'about' ? 1250 : 750, exit: 1000 }}
+            timeout={{ enter: path === 'about' ? 1250 : 900, exit: 1000 }}
             classNames={{
               enter,
               enterActive: path === 'about' ? enterActiveAbout : enterActive,
