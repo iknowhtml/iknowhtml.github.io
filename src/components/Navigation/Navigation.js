@@ -25,7 +25,9 @@ const NavigationInput = () => {
   const onInputChange = event => {
     updatePath(event.target.value);
     pages.forEach(page => {
-      const termRegExp = new RegExp(`^${encodeURI(event.target.value)}`);
+      const termRegExp = new RegExp(
+        `^${encodeURI(event.target.value.toLowerCase())}`
+      );
       if (
         termRegExp.test(page) &&
         event.nativeEvent.inputType !== 'deleteContentBackward'
