@@ -1,8 +1,12 @@
 iframe {
   min-width: 100vw;
-  height: 50vh;
+  height: 60vh;
   border: none;
   overflow: auto;
+
+  @media (max-width: 640px), (max-width: 900px) and (orientation: landscape) {
+    height: 40vh;
+  }
 }
 
 h3 {
