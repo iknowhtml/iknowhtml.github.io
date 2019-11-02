@@ -51,6 +51,11 @@ body {
   height: stretch;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 640px) {
+    overflow: hidden;
+    position: fixed;
+  }
 }
 
 /* Root element styling */
@@ -71,7 +76,7 @@ main {
   overflow: scroll;
 
   @media (max-width: 640px) {
-    max-height: 40vh;
+    max-height: 60vh;
   }
 }
 
