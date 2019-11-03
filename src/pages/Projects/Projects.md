@@ -1,6 +1,10 @@
+## [To Do Application](https://github.com/iknowhtml/todo)
+A personal to do application built with React and Node.js, and deployed to Google Kubernetes Engine using CircleCI. 
+
+---
 ## [Personal Site](https://github.com/iknowhtml/iknowhtml.github.io)
 
-A personal site written with React using the Hooks and Context API, Reach Router and React Transition Groups. Deployed to Github pages using CircleCI.
+A personal site written in React using the Hooks and Context API, Reach Router and React Transition Groups. Deployed to Github pages using CircleCI.
 
 ---
 
