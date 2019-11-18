@@ -1,4 +1,4 @@
-import React, { useEffect, Fragment } from 'react';
+import React, { useEffect } from 'react';
 import { navigate } from '@reach/router';
 
 import Header from './components/Header';
@@ -29,7 +29,7 @@ const App = () => {
   }, [path]);
 
   return (
-    <Fragment>
+    <>
       <Header />
       <Navigation />
       <FadeTransitionRouter>
@@ -37,7 +37,7 @@ const App = () => {
         <Resume path="resume" />
         <Projects path="projects" />
       </FadeTransitionRouter>
-    </Fragment>
+    </>
   );
 };
 
