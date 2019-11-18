@@ -21,7 +21,7 @@ const MobileNavigation = () => {
         className={isTypingComplete ? null : hidden}
         required
       >
-        <option value="">select page</option>
+        <option value="">e.g., about, resume, projects</option>
         {pages.map(page => (
           <option key={page} selected={path === page ? 'selected' : null}>
             {page}
