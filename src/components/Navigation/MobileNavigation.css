@@ -5,6 +5,8 @@ select {
   border-style: none none solid none;
   border-width: thin;
   outline: none;
+  background: white;
+  appearance: none;
   opacity: 1;
 
   transition: all 850ms;
