@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 
-import { hidden } from './Navigation.css';
+import { hidden } from './WebNavigation.css';
 import useIsTypingComplete from '../../utils/effects/useIsTypingComplete';
 import usePath from '../../utils/effects/usePath';
 

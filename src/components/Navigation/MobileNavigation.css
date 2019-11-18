@@ -1,0 +1,24 @@
+select {
+  width: 100%;
+  font-size: 1.75rem;
+  border-color: #e6e6e6;
+  border-style: none none solid none;
+  border-width: thin;
+  outline: none;
+  opacity: 1;
+
+  transition: all 850ms;
+}
+
+select:invalid {
+  color: #8e8e8e;
+}
+@media (max-width: 640px), (max-width: 900px) and (orientation: landscape) {
+  select {
+    font-size: 1.4rem;
+  }
+}
+
+.hidden {
+  opacity: 0;
+}
