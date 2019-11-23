@@ -96,11 +96,14 @@ const webpackConfiguration = () => ({
     new HtmlWebpackPlugin({
       title: 'Aki Gao',
       lang: 'en',
-      mobile: true,
       meta: [
         {
           name: 'description',
           content: 'Personal website for Aki Gao',
+        },
+        {
+          name: 'viewport',
+          content: 'width=device-width,height=device-height initial-scale=1',
         },
       ],
       favicon: path.resolve('src', 'static', 'favicon.png'),
