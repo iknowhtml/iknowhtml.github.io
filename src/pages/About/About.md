@@ -4,4 +4,4 @@ I'm passionate about Software, Entrepreneurship and how to leverage then to best
 
 When I'm not coding, I enjoy jamming out to music, dancing and calisthenics.  
 
-To contact me, email me at *[xiaoyu.akihiro.gao@gmail.com](mailto:xiaoyu.akihiro.gao@gmail.com)*. Also checkout my *[Github](https://github.com/iknowhtml)* and *[LinkedIn](https://linkedin.com/iknowhtml)*.  
+To contact me, email me at *[xiaoyu.akihiro.gao@gmail.com](mailto:xiaoyu.akihiro.gao@gmail.com)*. Also checkout my *[Github](https://github.com/iknowhtml)* and *[LinkedIn](https://linkedin.com/in/iknowhtml)*.  
