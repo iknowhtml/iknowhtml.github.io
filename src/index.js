@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import 'typeface-raleway';
 import App from './App';
 import { StateProvider } from './utils/state';
 import './global.postcss';
