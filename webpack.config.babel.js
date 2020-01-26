@@ -103,7 +103,7 @@ const webpackConfiguration = () => ({
         },
         {
           name: 'viewport',
-          content: 'width=device-width,height=device-height initial-scale=1',
+          content: 'width=device-width, height=device-height, initial-scale=1',
         },
       ],
       favicon: path.resolve('src', 'assets', 'favicon.png'),
