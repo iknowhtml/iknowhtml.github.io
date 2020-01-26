@@ -14,6 +14,12 @@ h1 {
   margin-bottom: 0.1rem;
 }
 
+@media (max-width: 640px), (max-width: 900px) and (orientation: landscape) {
+  .biggerText {
+    font-size: 1.3rem;
+  }
+}
+
 .enter {
   opacity: 0;
 }
