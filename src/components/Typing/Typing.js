@@ -6,23 +6,25 @@ import { cursor } from './cursor.postcss';
 import useIsTypingComplete from '../../utils/effects/useIsTypingComplete';
 
 const Typing = ({ characterDelay, punctuationDelay, children }) => {
-  const [index, updateIndex] = useState(1);
   const [isTypingComplete, updateIsTypingComplete] = useIsTypingComplete();
-
+  const [index, updateIndex] = useState(0);
   const isPunctuation = character => /,|\.|;|!/.test(character);
 
   useEffect(() => {
-    if (index >= children.length) {
+    let timeoutID;
+    if (index === children.length) {
       updateIsTypingComplete(true);
     } else {
-      setTimeout(
+      timeoutID = setTimeout(
         () => updateIndex(index + 1),
         // checks index - 1 to ensure longer delay after a punctuation has been "typed"
-        isPunctuation(children.charAt(index - 1))
+        isPunctuation(children.charAt(index))
           ? punctuationDelay
           : characterDelay
       );
     }
+
+    return () => clearTimeout(timeoutID);
   }, [index]);
 
   return isTypingComplete ? (
