@@ -14,14 +14,9 @@ const MobileNavigation = () => {
     updatePath(event.target.value);
   };
   return (
-    <nav>
-      <select
-        onBlur={null}
-        onChange={onSelectChange}
-        className={isTypingComplete ? null : hidden}
-        required
-      >
-        <option value="">e.g., about, resume, projects</option>
+    <nav className={isTypingComplete ? null : hidden}>
+      <select onBlur={null} onChange={onSelectChange} required>
+        <option value="">choose a page...</option>
         {pages.map(page => (
           <option key={page} selected={path === page ? 'selected' : null}>
             {page}
