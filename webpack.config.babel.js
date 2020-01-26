@@ -106,7 +106,7 @@ const webpackConfiguration = () => ({
           content: 'width=device-width,height=device-height initial-scale=1',
         },
       ],
-      favicon: path.resolve('src', 'static', 'favicon.png'),
+      favicon: path.resolve('src', 'assets', 'favicon.png'),
       template: HtmlWebpackTemplate,
       appMountId: 'root',
       minify: isProduction
