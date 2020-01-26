@@ -18,7 +18,7 @@ const Typing = ({ characterDelay, punctuationDelay, children }) => {
       timeoutID = setTimeout(
         () => updateIndex(index + 1),
         // checks index - 1 to ensure longer delay after a punctuation has been "typed"
-        isPunctuation(children.charAt(index))
+        isPunctuation(children.charAt(index - 1))
           ? punctuationDelay
           : characterDelay
       );
