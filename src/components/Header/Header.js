@@ -6,10 +6,10 @@ import Typing from '../Typing';
 import useIsTypingComplete from '../../utils/effects/useIsTypingComplete';
 import usePath from '../../utils/effects/usePath';
 
-import { enter, enterActive, exit, exitActive } from './Header.css';
+import { enter, enterActive, exit, exitActive, biggerText } from './Header.css';
 
 const welcomeMessage =
-  'Hi, my name is Aki. Welcome to my website. Learn more about me below.';
+  "Hi, I'm Aki. Welcome to my website. Learn more about me below.";
 const pageFoundMessage = (
   <Fragment>
     Aki Gao - <i>1 search result</i>
@@ -52,11 +52,11 @@ const Header = () => {
             timeout={300}
             classNames={{ enter, enterActive, exit, exitActive }}
           >
-            <h1>{headerText}</h1>
+            <h1 className={path === '' ? biggerText : null}>{headerText}</h1>
           </CSSTransition>
         </SwitchTransition>
       ) : (
-        <h1>
+        <h1 className={path === '' ? biggerText : null}>
           <Typing characterDelay={35} punctuationDelay={500}>
             {headerText}
           </Typing>
