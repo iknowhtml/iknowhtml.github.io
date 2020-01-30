@@ -26,7 +26,6 @@ const FadeTransitionRouter = ({ children }) => {
               exit,
               exitActive,
             }}
-            style={{ overflowY: 'hidden', height: '100%' }}
           >
             <Router location={location}>{children}</Router>
           </CSSTransition>

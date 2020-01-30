@@ -3,7 +3,7 @@ import React from 'react';
 import './Resume.postcss';
 
 const Projects = () => (
-  <main style={{ overflowY: 'hidden', height: '70vh' }}>
+  <main>
     <iframe title="resume" src="https://iknowht.ml/resume"></iframe>
     <div>
       <a href="https://iknowht.ml/resume/Aki%20Gao's%20Resume.pdf" download>
