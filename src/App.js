@@ -25,6 +25,12 @@ const App = () => {
   const sanitizePath = path => encodeURI(path.replace(/^\/+/, ''));
 
   useEffect(() => {
+    document.getElementsByTagName(
+      'body'
+    )[0].style.height = `${window.innerHeight}px`;
+  }, [path]);
+
+  useEffect(() => {
     navigate(`/${sanitizePath(path)}`);
   }, [path]);
 
