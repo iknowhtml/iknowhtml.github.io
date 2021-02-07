@@ -1,6 +1,6 @@
-## [Todo Application](https://github.com/iknowhtml/todo)
+## [Todo Application (In-Progress)](https://github.com/iknowhtml/todo)
 
-A personal todo application built with React and Node.js, and deployed with CircleCI to Google Kubernetes Engine.
+A personal todo application built with React, Node.js, GraphQL, PostgreSQL and deployed with CircleCI to Google Kubernetes Engine. 
 
 ---
 
