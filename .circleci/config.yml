@@ -17,7 +17,7 @@ jobs:
     steps:
       - add_ssh_keys:
           fingerprints:
-            - "3d:49:45:46:91:75:7b:cd:e0:4d:13:f9:34:b5:15:5d"
+            - "63:22:30:cb:c9:32:3c:31:4a:80:bf:7c:32:95:6e:d3"
       
       - checkout
 
