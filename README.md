@@ -1,6 +1,6 @@
-# Aki Gao's Personal Site &middot; [![CircleCI](https://circleci.com/gh/iknowhtml/iknowhtml.github.io/tree/production.svg?style=shield)](https://circleci.com/gh/iknowhtml/iknowhtml.github.io/tree/production)
+# Aki Gao's Personal Site
 
-Personal Website For Aki Gao. built with Webpack, React using the Hooks & Context API, Reach Router and React Transition Groups.
+Personal Website For Aki Gao. Built with HTML & CSS.
 
 ## To use this site, run the following commands in the terminal:
 

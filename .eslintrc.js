@@ -1,14 +1,13 @@
 module.exports = {
   parserOptions: {
-    ecmaVersion: 10,
+    ecmaVersion: 11,
     sourceType: 'module',
+    ecmaFeatures: {
+      modules: true,
+    },
   },
-  plugins: ['prettier', 'react', 'jsx-a11y'],
-  extends: [
-    'eslint:recommended',
-    'plugin:react/recommended',
-    'plugin:jsx-a11y/recommended',
-  ],
+  plugins: ['prettier'],
+  extends: ['eslint:recommended'],
   rules: {
     'prettier/prettier': ['error'],
     'comma-dangle': ['error', 'always-multiline'],
@@ -16,11 +15,5 @@ module.exports = {
   env: {
     node: true,
     browser: true,
-    jest: true,
-  },
-  settings: {
-    react: {
-      version: 'detect',
-    },
   },
 };
