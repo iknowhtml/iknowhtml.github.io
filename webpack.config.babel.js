@@ -54,7 +54,7 @@ const webpackConfiguration = () => ({
       filename: 'style.css',
     }),
   ],
-  //Configures Webpack DevServer
+  //Configures Webpack Development Server
   devServer: {
     port: 8080,
     // Enables webpack's Hot Module Replacement feature.
