@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "start": "sleep 5s && open http://localhost:8080 & nodemon --watch webpack.config.babel.js --exec \"webpack serve --mode development\"",
-    "build": "yarn clean && NODE_ENV=production webpack --progress --colors --mode production",
+    "start": "sleep 5s && open http://localhost:8080 & nodemon --watch webpack.config.babel.js --exec \"webpack serve --mode development\" --verbose",
+    "build": "yarn clean && webpack --progress --colors --mode production",
     "clean": "rm -rf dist/*"
   },
   "devDependencies": {
