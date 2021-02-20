@@ -13,7 +13,7 @@ const webpackConfiguration = () => ({
   module: {
     rules: [
       {
-        test: /.css$/,
+        test: /\.(post)?css$/,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
