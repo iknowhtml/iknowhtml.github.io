@@ -1,5 +1,5 @@
 /* Import Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&family=Roboto@400:500&family=Source+Code+Pro@400:500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200:400&family=Roboto@400:500&family=Source+Code+Pro@400:500&display=swap');
 
 /* Set Variables */
 :root {
@@ -71,27 +71,6 @@ body {
   background-color: var(--backgroundColor);
 }
 
-a {
-  color: var(--textColor);
-  text-decoration: none;
-  display: inline-block;
-  font-weight: medium;
-
-  &:after {
-    display: block;
-    width: 0%;
-    height: 1px;
-    margin: auto;
-    content: '';
-    transition: all 0.125s;
-    background: var(--textColor);
-  }
-
-  &:hover:after {
-    width: 100%;
-  }
-}
-
 main {
   max-width: var(--maxWidth);
 
@@ -104,11 +83,16 @@ main {
     &:hover {
       transform: scale(1.01);
     }
+
+    & a {
+      color: var(--textColor);
+      text-decoration: none;
+    }
   }
 
   & section.bio {
     font-family: 'Nunito', sans-serif;
-    font-weight: lighter;
+    font-weight: 200;
     margin: var(--verticalMargin) 0;
 
     & > p {
@@ -118,17 +102,40 @@ main {
         transform: scale(1.01);
       }
     }
+
+    & a {
+      color: var(--textColor);
+      text-decoration: none;
+      display: inline-block;
+      font-weight: normal;
+
+      &:after {
+        display: block;
+        width: 0%;
+        height: 1px;
+        margin: auto;
+        content: '';
+        transition: all 0.125s;
+        background: var(--textColor);
+      }
+
+      &:hover:after {
+        width: 100%;
+      }
+    }
   }
 }
 
 footer {
   width: var(--maxWidth);
 
-  & .social-media {
+  & section.social-media {
     font-family: 'Roboto', sans-serif;
     width: max-content;
     margin-left: auto;
     white-space: nowrap;
+    display: flex;
+    flex-direction: row;
 
     transition: all 0.125s;
 
@@ -144,10 +151,31 @@ footer {
       content: '}';
     }
 
-    & svg.github-logo {
-      width: 1rem;
-      height: 1rem;
+    & a {
       color: var(--textColor);
+      font-weight: 500;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: 0 0.15rem;
+
+      &:after {
+        display: block;
+        width: 0%;
+        height: 1px;
+        content: '';
+        transition: all 0.125s;
+        background: var(--textColor);
+      }
+
+      &:hover:after {
+        width: 100%;
+      }
+
+      & svg.github-logo {
+        padding-bottom: 1.6px;
+      }
     }
   }
 }
