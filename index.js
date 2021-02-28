@@ -1,0 +1,1 @@
+window.addEventListener("mousemove",(({x:e,y:t})=>{const n=(e,t)=>5*(e/t-.5);document.body.style.transform=`perspective(${document.body.clientHeight}px) rotateX(${n(e,window.innerWidth)}deg) rotateY(${n(t,window.innerHeight)}deg)`}));
