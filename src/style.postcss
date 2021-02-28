@@ -1,3 +1,7 @@
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&family=Roboto&family=Source+Code+Pro&display=swap');
+
+/* Set Variables */
 :root {
   --maxWidth: 60vw;
   --textColor: #272727;
@@ -13,6 +17,7 @@ div.element-tag {
   --verticalMargin: 1.5rem;
 }
 
+/* Set Media Queries */
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
   .element-tag {
@@ -37,6 +42,7 @@ div.element-tag {
   }
 }
 
+/* Site Styling */
 html {
   color: var(--textColor);
 }
@@ -91,7 +97,6 @@ main {
 
   & div.element-tag {
     font-family: 'Source Code Pro', sans-serif;
-    font-weight: normal;
     letter-spacing: 0.125rem;
     font-size: var(--fontSize);
     transition: all 0.125s;
@@ -142,6 +147,7 @@ footer {
     & svg.github-logo {
       width: 1rem;
       height: 1rem;
+      color: var(--textColor);
     }
   }
 }
