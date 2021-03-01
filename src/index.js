@@ -1,6 +1,10 @@
 import './style.postcss';
 import './CNAME';
 
+window.addEventListener('load', () => {
+  document.querySelector('footer ~ script').remove();
+});
+
 window.addEventListener('mousemove', ({ x, y }) => {
   const getSkew = (position, length) => 5 * (position / length - 0.5);
   document.body.style.transform = `perspective(${
