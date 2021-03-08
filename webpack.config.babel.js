@@ -10,7 +10,6 @@ const webpackConfiguration = (_, argv) => {
   const basePlugins = [
     new HtmlWebpackPlugin({
       template: path.resolve('src', 'index.html'),
-      title: "Aki Gao's Personal Website - Home Page",
       meta: [
         {
           name: 'description',
