@@ -14,8 +14,10 @@ const webpackConfiguration = (_, argv) => {
       meta: [
         {
           name: 'description',
-          content: 'Personal website for Aki Gao',
+          content:
+            'Aki Gao is a software engineer with expertise in front-end, UX/UI and digital accessibility democratizing the Web at User1st.',
         },
+        { name: 'author', content: 'Aki Gao' },
         {
           name: 'viewport',
           content: 'width=device-width, height=device-height, initial-scale=1',
