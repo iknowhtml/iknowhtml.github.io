@@ -1,5 +1,4 @@
 import './style.postcss';
-import './CNAME';
 
 window.addEventListener('load', () => {
   document.querySelector('footer ~ script').remove();

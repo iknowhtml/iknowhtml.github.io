@@ -4,6 +4,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import TerserJSPlugin from 'terser-webpack-plugin';
 import OptimizeCssAssetsWebpackPlugin from 'optimize-css-assets-webpack-plugin';
 import { HotModuleReplacementPlugin } from 'webpack';
+import CopyPlugin from 'copy-webpack-plugin';
 
 // Two parameters are passed in at bundle time, env & argv. argv contains all flags passed into webpack, including mode.
 const webpackConfiguration = (_, argv) => {
@@ -37,6 +38,9 @@ const webpackConfiguration = (_, argv) => {
     new MiniCssExtractPlugin({
       filename: 'style.css',
     }),
+    new CopyPlugin({
+      patterns: [{ from: 'src/(CNAME|*.png)', to: () => '[name][ext]' }],
+    }),
   ];
 
   const devPlugins = [new HotModuleReplacementPlugin()];
@@ -58,17 +62,6 @@ const webpackConfiguration = (_, argv) => {
             },
             'css-loader',
             'postcss-loader',
-          ],
-        },
-        {
-          test: /CNAME$/,
-          use: [
-            {
-              loader: 'file-loader',
-              options: {
-                name: '[name]',
-              },
-            },
           ],
         },
       ],
