@@ -15,12 +15,16 @@ const webpackConfiguration = (_, argv) => {
         {
           name: 'description',
           content:
-            'Aki Gao is a software engineer with expertise in front-end, UX/UI and digital accessibility democratizing the Web at User1st.',
+            'Aki Gao is a software engineer with expertise in front-end, UX/UI, and digital accessibility democratizing the Web at User1st.',
         },
         { name: 'author', content: 'Aki Gao' },
         {
           name: 'viewport',
           content: 'width=device-width, height=device-height, initial-scale=1',
+        },
+        {
+          name: 'google-site-verification',
+          content: 'Wb7w2aVwWBpmeGvyST0SVa_K3dUVZf6bRbTgUZtQVi0',
         },
       ],
       favicon: path.resolve('src', 'favicon.png'),
