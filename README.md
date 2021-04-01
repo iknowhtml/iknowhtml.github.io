@@ -1,4 +1,4 @@
-# Aki Gao's Personal Site
+# Aki Gao's Personal Site [![Build and Deploy Personal Site](https://github.com/iknowhtml/iknowhtml.github.io/actions/workflows/build-and-deploy-site.yml/badge.svg)](https://github.com/iknowhtml/iknowhtml.github.io/actions/workflows/build-and-deploy-site.yml)
 
 Personal Website For Aki Gao. Built with HTML & CSS.
 
