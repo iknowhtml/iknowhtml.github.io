@@ -15,7 +15,7 @@ const webpackConfiguration = (_, argv) => {
         {
           name: 'description',
           content:
-            'Aki Gao is a software engineer with expertise in front-end, UX/UI, and digital accessibility democratizing the Web at User1st.',
+            'Aki Gao is a software engineer with expertise in front-end, UX/UI, and digital accessibility democratizing the Web at User1st Dabbling in DeFi.',
         },
         { name: 'author', content: 'Aki Gao' },
         {
