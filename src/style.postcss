@@ -5,6 +5,7 @@
   --maxWidth: 70vw;
   --textColor: #272727;
   --backgroundColor: #fff;
+  --fontSize: 0.875rem;
 }
 
 .bio,
@@ -12,18 +13,18 @@
   --verticalMargin: 1.5rem;
 }
 
-.element-tag {
-  --fontSize: 1.3rem;
-}
-
 /* Set Media Queries */
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-  .element-tag {
-    --fontSize: 1.55rem;
+  :root {
+    font-size: 1rem;
   }
-  .bio {
-    --verticalMargin: 1.55rem;
+  .element-tag {
+    --fontSize: 1rem;
+  }
+  .bio,
+  .element-tag {
+    --verticalMargin: 1.5rem;
   }
 }
 
@@ -46,8 +47,25 @@
 }
 
 /* Site Styling */
-html {
+* {
   color: var(--textColor);
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  height: 100vh;
+}
+
+body {
+  width: 100%;
+  display: flex;
+  min-height: 100vh;
+  margin: auto 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--backgroundColor);
 }
 
 .sr-only {
@@ -61,25 +79,13 @@ html {
   white-space: nowrap;
   border-width: 0;
 }
-
-body {
-  margin: 0;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--backgroundColor);
-}
-
 main {
   max-width: var(--maxWidth);
 
   & div.element-tag {
     font-family: 'Source Code Pro', sans-serif;
     letter-spacing: 0.125rem;
-    font-size: var(--fontSize);
+    font-size: calc(var(--fontSize) * 1.5);
     transition: all 0.125s;
 
     &:hover {
@@ -99,6 +105,7 @@ main {
 
     & > p {
       transition: all 0.25s;
+      font-size: var(--fontSize);
 
       &:hover {
         transform: scale(1.01);
@@ -132,12 +139,11 @@ footer {
   width: var(--maxWidth);
 
   & section.social-media {
+    display: flex;
     font-family: 'Roboto', sans-serif;
-    height: var(--fontSize);
     width: max-content;
     margin-left: auto;
     white-space: nowrap;
-    display: flex;
     flex-direction: row;
 
     transition: all 0.125s;
