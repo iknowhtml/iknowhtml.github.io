@@ -6,16 +6,24 @@ import OptimizeCssAssetsWebpackPlugin from 'optimize-css-assets-webpack-plugin';
 import { HotModuleReplacementPlugin } from 'webpack';
 import CopyPlugin from 'copy-webpack-plugin';
 
+const DESCRIPTION =
+  'Aki Gao is a senior software engineer with expertise in front-end, Web3 & TypeScript with a passion for deliverying delightful products that empower people, solving difficult technical problems & leading high performing engineering teams.';
+
+const TITLE = "Aki Gao's Personal Site";
+
+const PREVIEW_IMAGE_URL =
+  'https://media.licdn.com/dms/image/C4D03AQFAXFJFf4AQkA/profile-displayphoto-shrink_800_800/0/1645480361505?e=1683158400&v=beta&t=1N7qVwWPe-N3sxb8huwNMb9bp2jamCvm1e7Wwj-rc2U';
+
 // Two parameters are passed in at bundle time, env & argv. argv contains all flags passed into webpack, including mode.
 const webpackConfiguration = (_, argv) => {
   const basePlugins = [
     new HtmlWebpackPlugin({
       template: path.resolve('src', 'index.html'),
+      title: TITLE,
       meta: [
         {
           name: 'description',
-          content:
-            'Aki Gao is a software engineer, architect & leader with expertise in front-end, UX/UI & digital accessibility democratize the Web at User1st.',
+          content: DESCRIPTION,
         },
         { name: 'author', content: 'Aki Gao' },
         {
@@ -26,6 +34,39 @@ const webpackConfiguration = (_, argv) => {
           name: 'google-site-verification',
           content: 'Wb7w2aVwWBpmeGvyST0SVa_K3dUVZf6bRbTgUZtQVi0',
         },
+        {
+          name: 'keywords',
+          content: 'aki, gao, software engineer, front end, web3, typescript',
+        },
+        {
+          name: 'og:title',
+          content: TITLE,
+        },
+        {
+          name: 'og:url',
+          content: 'iknowht.ml',
+        },
+        {
+          name: 'og:description',
+          content: DESCRIPTION,
+        },
+        {
+          name: 'og:image',
+          content: PREVIEW_IMAGE_URL,
+        },
+        {
+          name: 'twitter:card',
+          content: 'summary_large_image',
+        },
+        {
+          name: 'twitter:title',
+          content: TITLE,
+        },
+        {
+          name: 'twitter:description',
+          content: DESCRIPTION,
+        },
+        { name: 'twitter:image', content: PREVIEW_IMAGE_URL },
       ],
       favicon: path.resolve('src', 'favicon.png'),
       minify:
