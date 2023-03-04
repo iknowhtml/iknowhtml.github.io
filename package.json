@@ -2,7 +2,7 @@
   "scripts": {
     "start": "nodemon --watch webpack.config.babel.js --exec \"webpack serve --mode development\" --verbose",
     "build": "yarn clean && webpack --color --progress --mode production",
-    "clean": "rm -rf dist/*"
+    "clean": "rm -rf dist"
   },
   "devDependencies": {
     "@babel/cli": "^7.16.0",
