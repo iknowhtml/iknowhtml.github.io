@@ -7,12 +7,11 @@ import { HotModuleReplacementPlugin } from 'webpack';
 import CopyPlugin from 'copy-webpack-plugin';
 
 const DESCRIPTION =
-  'Aki Gao is a senior software engineer with expertise in front-end, Web3 & TypeScript with a passion for deliverying delightful products that empower people, solving difficult technical problems & leading high performing engineering teams.';
+  'Aki Gao is a senior software engineer with expertise in front-end, Web3 & TypeScript with a passion for deliverying delightful products that empower people, solving difficult technical problems & optimizing productivity for remote engineering team.';
 
 const TITLE = "Aki Gao's Personal Site";
 
-const PREVIEW_IMAGE_URL =
-  'https://media.licdn.com/dms/image/C4D03AQFAXFJFf4AQkA/profile-displayphoto-shrink_800_800/0/1645480361505?e=1683158400&v=beta&t=1N7qVwWPe-N3sxb8huwNMb9bp2jamCvm1e7Wwj-rc2U';
+const PREVIEW_IMAGE_URL = 'social-media-preview.png';
 
 // Two parameters are passed in at bundle time, env & argv. argv contains all flags passed into webpack, including mode.
 const webpackConfiguration = (_, argv) => {
