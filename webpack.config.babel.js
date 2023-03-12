@@ -11,7 +11,8 @@ const DESCRIPTION =
 
 const TITLE = "Aki Gao's Personal Site";
 
-const PREVIEW_IMAGE_URL = 'social-media-preview.png';
+// TODO: is hard coding this okay?
+const PREVIEW_IMAGE_URL = 'https://iknowht.ml/social-media-preview.png';
 
 // Two parameters are passed in at bundle time, env & argv. argv contains all flags passed into webpack, including mode.
 const webpackConfiguration = (_, argv) => {
