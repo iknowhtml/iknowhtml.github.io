@@ -2,10 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;400&family=Roboto:wght@400;500&family=Source+Code+Pro:wght@400;500&display=swap');
 /* Set Variables */
 :root {
-  --maxWidth: 70vw;
+  --maxWidth: 75vw;
   --textColor: #272727;
   --backgroundColor: #fff;
-  --fontSize: 0.875rem;
+  --fontSize: 1rem;
 }
 
 .bio,
@@ -16,9 +16,6 @@
 /* Set Media Queries */
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-  :root {
-    font-size: 1rem;
-  }
   .element-tag {
     --fontSize: 1rem;
   }
@@ -31,9 +28,8 @@
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
   :root {
-    --maxWidth: 50vw;
+    --maxWidth: 750px;
   }
-
   body {
     overflow: hidden;
   }
@@ -41,9 +37,6 @@
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
-  :root {
-    --maxWidth: 40vw;
-  }
 }
 
 /* Site Styling */
@@ -85,7 +78,7 @@ main {
   & div.element-tag {
     font-family: 'Source Code Pro', sans-serif;
     letter-spacing: 0.125rem;
-    font-size: calc(var(--fontSize) * 1.5);
+    font-size: calc(var(--fontSize) * 2);
     transition: all 0.125s;
 
     &:hover {
@@ -106,7 +99,7 @@ main {
     & > p {
       transition: all 0.25s;
       font-size: var(--fontSize);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.75rem;
 
       &:hover {
         transform: scale(1.01);
