@@ -126,6 +126,20 @@ main {
         width: 100%;
       }
     }
+    a.hidden {
+      color: var(--backgroundColor);
+      position: absolute;
+
+      &:hover {
+        cursor: pointer;
+      }
+      &:after {
+        display: none;
+      }
+      &:hover:after {
+        width: 0;
+      }
+    }
   }
 }
 
