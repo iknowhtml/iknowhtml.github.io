@@ -7,7 +7,7 @@ import { HotModuleReplacementPlugin } from 'webpack';
 import CopyPlugin from 'copy-webpack-plugin';
 
 const DESCRIPTION =
-  'Aki Gao is a senior software engineer with expertise in front-end, Web3 & TypeScript with a passion for deliverying delightful products that empower people, solving difficult technical problems & optimizing productivity for remote engineering team.';
+  'Aki Gao is Staff Software Engineer with a passion for solving difficult technical problems, delivering delightful products that empower people and leading high performing engineering teams.';
 
 const TITLE = "Aki Gao's Personal Site";
 
@@ -36,7 +36,7 @@ const webpackConfiguration = (_, argv) => {
         },
         {
           name: 'keywords',
-          content: 'aki, gao, software engineer, front end, web3, typescript',
+          content: 'aki, gao, staff, software engineer, web3, typescript, blockchain, cryptocurrency, mpc, tee, balenciaga',
         },
         {
           name: 'og:title',
