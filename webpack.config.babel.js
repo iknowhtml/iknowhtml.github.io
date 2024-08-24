@@ -7,7 +7,7 @@ import { HotModuleReplacementPlugin } from 'webpack';
 import CopyPlugin from 'copy-webpack-plugin';
 
 const DESCRIPTION =
-  'Aki Gao is Staff Software Engineer with a passion for solving difficult technical problems, delivering delightful products that empower people and leading high performing engineering teams.';
+  'Aki Gao is Staff Software Engineer with a passion for solving difficult technical problems, delivering delightful products that empower people and leading high performing engineering teams. Aki also ❤️s Balenciaga.';
 
 const TITLE = "Aki Gao's Personal Site";
 
