@@ -10,7 +10,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Set Up Node Enviroment
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
+      - name: Set up PNPM
+      - uses: pnpm/action-setup@v4
       - name: Install Dependencies
         run: pnpm i
       - name: Build Project
