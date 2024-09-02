@@ -9,5 +9,5 @@ export default defineConfig({
     port: 3000,
   },
   site: "https://iknowhtml.github.io",
-  base: "iknowhtml.github.io",
+  base: "/",
 });
