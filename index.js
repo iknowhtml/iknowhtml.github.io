@@ -1,1 +1,0 @@
-window.addEventListener("load",(()=>{document.querySelector("footer ~ script").remove()})),window.addEventListener("mousemove",(({x:e,y:t})=>{const o=(e,t)=>5*(e/t-.5);document.body.style.transform=`perspective(${document.body.clientHeight}px) rotateX(${o(e,window.innerWidth)}deg) rotateY(${o(t,window.innerHeight)}deg)`}));
