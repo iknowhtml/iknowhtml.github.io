@@ -21,47 +21,128 @@ import Button from "../components/Button.astro";
 
 <script>
   const video = document.querySelector("video");
+  const effects = ["grayscale", "invert", "scale-x-[-1]", "scale-y-[-1]"];
+
   if (video) {
-    setInterval(() => {
-      video.playbackRate = 10 * Math.random();
-    }, 500);
+    const applyRandomPlaybackRate = () => {
+      setTimeout(
+        () => {
+          video.playbackRate = Number((7.5 * Math.random()).toFixed(1));
+          applyRandomPlaybackRate();
+        },
+        Math.round(Math.random() * 500)
+      );
+    };
+
+    let lastRandomEffect = "";
+
+    const applyRandomEffect = () =>
+      setTimeout(
+        () => {
+          video.className = video.className.replace(lastRandomEffect, "");
+
+          // Choose a random effect from the list
+          lastRandomEffect =
+            effects[Math.floor(Math.random() * effects.length)];
+
+          // Apply the chosen effect
+          video.classList.add(lastRandomEffect);
+
+          applyRandomEffect();
+        },
+        Math.round(Math.random() * 500)
+      );
+
+    applyRandomPlaybackRate();
+    applyRandomEffect();
   }
+
+  const heroContent = document.getElementById("hero-content");
+
+  const updateTranslation = () => {
+    if (heroContent && video) {
+      const rect = video.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
+
+      // Calculate the amount the video is outside the viewport
+      const amountOutOfView = Math.max(
+        0,
+        rect.top < 0 ? -rect.top : rect.bottom - viewportHeight
+      );
+
+      // Apply the translation to the h2 element
+      heroContent.style.transform = `translateY(-${amountOutOfView * 0.5}px)`;
+    }
+  };
+
+  // Update the translation when scrolling or resizing
+  window.addEventListener("scroll", updateTranslation);
+  window.addEventListener("resize", updateTranslation);
+  updateTranslation(); // Initial call to set the translation
 </script>
 
-<main class="h-screen">
-  <h1
-    class="font-bold uppercase text-[22px] py-[5px] text-center tracking-wider border-b-[1px] border-b-black"
-  >
-    <a href="https://www.balenciaga.com/">21ciaga</a>
-  </h1>
-  <h2
-    class="font-bold uppercase text-center text-[24px] py-[60px] tracking-wider"
-  >
-    高暁裕 | <a
-      href="https://static.hollywoodreporter.com/sites/default/files/2014/05/tj_miller_silicon_valley.jpg"
-      >iknowhtml</a
-    > | <a href="https://bape.com">(1993-2093)</a>
-  </h2>
-  <div class="relative w-full">
-    <video
-      src="/media/no-one-knows-what-it-means.webm"
-      autoplay
-      loop
-      muted
-      class="w-full h-auto"></video>
-    <div
-      class="absolute flex flex-col items-center justify-center inset-0 gap-4"
-    >
-      <h2
-        class="uppercase text-white text-3xl"
-        style="text-shadow: -1px -1px 0 var(--text-shadow-color), 1px -1px 0 var(--text-shadow-color), -1px 1px 0 var(--text-shadow-color), 1px 1px 0 var(--text-shadow-color);"
+<html lang="en">
+  <head>
+    <meta
+      name="description"
+      content="Aki Gao is Staff Software Engineer with a passion for solving difficult technical problems, delivering delightful products, and leading high performing engineering teams. Aki also ❤️s Balenciaga."
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, height=device-height, initial-scale=1"
+    />
+    <meta
+      name="keywords"
+      content="aki gao, software engineer, web3, typescript, blockchain, cryptocurrency, balenciaga"
+    />
+    <title>高暁裕 | iknowhtml | (1993-2093)</title>
+  </head>
+  <body>
+    <main class="h-screen overflow-clip">
+      <h1
+        class="font-bold
+      uppercase text-[22px] py-[5px] text-center tracking-wider border-b-[1px]
+      border-b-black"
       >
-        "No one knows what it means, but it's provocative."
+        <a href="https://www.balenciaga.com/">21ciaga</a>
+      </h1>
+      <h2
+        class="font-bold uppercase text-center text-[24px] py-[60px]
+      tracking-wider"
+      >
+        高暁裕 | <a
+          href="https://static.hollywoodreporter.com/sites/default/files/2014/05/tj_miller_silicon_valley.jpg"
+          >iknowhtml</a
+        > | <a href="https://bape.com">(1993-2093)</a>
       </h2>
-      <div class="flex gap-4">
-        <Button href="https://www.linkedin.com/in/iknowhtml">LinkedIn</Button>
-        <Button href="https://github.com/iknowhtml">Github</Button>
+      <div class="relative w-full">
+        <video
+          src="/media/no-one-knows-what-it-means.webm"
+          autoplay
+          loop
+          muted
+          class="w-full h-auto"></video>
+        <div
+          id="hero-content"
+          class="absolute flex
+      flex-col items-center justify-center inset-0 gap-4 object-cover"
+        >
+          <h2
+            class="uppercase text-white text-3xl"
+            style="text-shadow: -1px -1px 0
+      var(--text-shadow-color), 1px -1px 0 var(--text-shadow-color), -1px 1px 0
+      var(--text-shadow-color), 1px 1px 0 var(--text-shadow-color);"
+          >
+            "No one knows what it means, but it's provocative."
+          </h2>
+          <div class="flex gap-4">
+            <Button href="https://www.linkedin.com/in/iknowhtml"
+              >LinkedIn</Button
+            >
+            <Button href="https://github.com/iknowhtml">Github</Button>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</main>
+    </main>
+  </body>
+</html>
