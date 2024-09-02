@@ -8,4 +8,6 @@ export default defineConfig({
   server: {
     port: 3000,
   },
+  site: "https://iknowhtml.github.io",
+  base: "iknowhtml.github.io",
 });
