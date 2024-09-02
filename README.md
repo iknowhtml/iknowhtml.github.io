@@ -1,12 +1,31 @@
-# Aki Gao's Personal Site &middot; [![Build and Deploy Personal Site](https://github.com/iknowhtml/iknowhtml.github.io/actions/workflows/build-and-deploy-site.yml/badge.svg)](https://github.com/iknowhtml/iknowhtml.github.io/actions/workflows/build-and-deploy-site.yml)
+# 21ciaga [![Build and Deploy Personal Site](https://github.com/iknowhtml/iknowhtml.github.io/actions/workflows/build-and-deploy-site.yml/badge.svg)](https://github.com/iknowhtml/iknowhtml.github.io/actions/workflows/build-and-deploy-site.yml)
 
-Personal Website For Aki Gao. Built with HTML & CSS.
+Personal Website For Aki. Built with Astro, Tailwind CSS & ❤️ for Balenciaga.
 
-## To use this site, run the following commands in the terminal:
+## Preparing Development Environment
 
-```bash
+```shell
 git clone https://github.com/iknowhtml/iknowhtml.github.io.git
+
 cd iknowhtml.github.io
-yarn install
-yarn start
+
+pnpm i
 ```
+
+# Scripts
+
+### `dev`
+
+Starts the development server on [localhost:3000](http://localhost:3000).
+
+### `build`
+
+Builds the project for production into the `dist` folder. Checks for issues with `astro check` and then compiles the project with `astro build`.
+
+### `preview`
+
+Starts the production server using the output from `dist`.
+
+### `astro`
+
+Runs the Astro CLI.

@@ -1,0 +1,67 @@
+---
+import Button from "../components/Button.astro";
+---
+
+<style>
+  @font-face {
+    font-family: "BB";
+    src: url("/fonts/BB-Regular.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: "BB";
+    src: url("/fonts/BB-CondBold.woff2") format("woff2");
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  :root {
+    --text-shadow-color: rgba(114, 117, 120, 0.1);
+  }
+</style>
+
+<script>
+  const video = document.querySelector("video");
+  if (video) {
+    setInterval(() => {
+      video.playbackRate = 10 * Math.random();
+    }, 500);
+  }
+</script>
+
+<main class="h-screen">
+  <h1
+    class="font-bold uppercase text-[22px] py-[5px] text-center tracking-wider border-b-[1px] border-b-black"
+  >
+    <a href="https://www.balenciaga.com/">21ciaga</a>
+  </h1>
+  <h2
+    class="font-bold uppercase text-center text-[24px] py-[60px] tracking-wider"
+  >
+    高暁裕 | <a
+      href="https://static.hollywoodreporter.com/sites/default/files/2014/05/tj_miller_silicon_valley.jpg"
+      >iknowhtml</a
+    > | <a href="https://bape.com">(1993-2093)</a>
+  </h2>
+  <div class="relative w-full">
+    <video
+      src="/media/no-one-knows-what-it-means.webm"
+      autoplay
+      loop
+      muted
+      class="w-full h-auto"></video>
+    <div
+      class="absolute flex flex-col items-center justify-center inset-0 gap-4"
+    >
+      <h2
+        class="uppercase text-white text-3xl"
+        style="text-shadow: -1px -1px 0 var(--text-shadow-color), 1px -1px 0 var(--text-shadow-color), -1px 1px 0 var(--text-shadow-color), 1px 1px 0 var(--text-shadow-color);"
+      >
+        "No one knows what it means, but it's provocative."
+      </h2>
+      <div class="flex gap-4">
+        <Button href="https://www.linkedin.com/in/iknowhtml">LinkedIn</Button>
+        <Button href="https://github.com/iknowhtml">Github</Button>
+      </div>
+    </div>
+  </div>
+</main>
