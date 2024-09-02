@@ -21,40 +21,44 @@ import Button from "../components/Button.astro";
 
 <script>
   const video = document.querySelector("video");
-  const effects = ["grayscale", "invert", "scale-x-[-1]", "scale-y-[-1]"];
 
   if (video) {
     const applyRandomPlaybackRate = () => {
       setTimeout(
         () => {
-          video.playbackRate = Number((7.5 * Math.random()).toFixed(1));
+          video.playbackRate = Number((5 * Math.random()).toFixed(1));
           applyRandomPlaybackRate();
         },
-        Math.round(Math.random() * 500)
+        Math.round(Math.random() * 750)
       );
     };
 
-    let lastRandomEffect = "";
+    applyRandomPlaybackRate();
 
-    const applyRandomEffect = () =>
+    const applyRandomEffect = (effects: string[], lastRandomEffect = "") => {
       setTimeout(
         () => {
           video.className = video.className.replace(lastRandomEffect, "");
 
-          // Choose a random effect from the list
           lastRandomEffect =
             effects[Math.floor(Math.random() * effects.length)];
 
-          // Apply the chosen effect
-          video.classList.add(lastRandomEffect);
+          if (lastRandomEffect !== "") {
+            video.classList.add(lastRandomEffect);
+          }
 
-          applyRandomEffect();
+          applyRandomEffect(effects, lastRandomEffect);
         },
         Math.round(Math.random() * 500)
       );
-
-    applyRandomPlaybackRate();
-    applyRandomEffect();
+    };
+    applyRandomEffect([
+      "",
+      "invert",
+      "grayscale",
+      "scale-x-[-1]",
+      "scale-y-[-1]",
+    ]);
   }
 
   const heroContent = document.getElementById("hero-content");
