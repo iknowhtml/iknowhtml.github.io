@@ -20,6 +20,9 @@ import Button from "../components/Button.astro";
 </style>
 
 <script>
+  if (import.meta.env.PROD) {
+    setTimeout(() => alert("Your browser is now mining crypto 🤡"), 5000);
+  }
   const video = document.querySelector("video");
 
   if (video) {
@@ -99,7 +102,44 @@ import Button from "../components/Button.astro";
     />
     <meta
       name="keywords"
-      content="aki gao, software engineer, web3, typescript, blockchain, cryptocurrency, balenciaga"
+      content="aki gao, aki, gao, xiaoyu, akihiro, xiaoyu gao, staff, software engineer, web3, blockchain, cryptocurrency, balenciaga"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://www.balenciaga.com/on/demandware.static/Sites-BAL-R-NOAM-Site/-/default/dw84447b7c/images/favicons/favicon-32x32.png"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://www.balenciaga.com/on/demandware.static/Sites-BAL-R-NOAM-Site/-/default/dw178de291/images/favicons/favicon-48x48.png"
+      sizes="48x48"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://www.balenciaga.com/on/demandware.static/Sites-BAL-R-NOAM-Site/-/default/dw314ab939/images/favicons/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://www.balenciaga.com/on/demandware.static/Sites-BAL-R-NOAM-Site/-/default/dwa1b36222/images/favicons/favicon-128x128.png"
+      sizes="128x128"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://www.balenciaga.com/on/demandware.static/Sites-BAL-R-NOAM-Site/-/default/dwbbdf5cc6/images/favicons/favicon-196x196.png"
+      sizes="196x196"
+    />
+
+    <meta name="apple-mobile-web-app-title" content="Balenciaga" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="https://www.balenciaga.com/on/demandware.static/Sites-BAL-R-NOAM-Site/-/default/dw07dd2dab/images/favicons/favicon-180x180.png"
     />
   </head>
   <body>
