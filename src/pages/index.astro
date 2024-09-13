@@ -32,7 +32,7 @@ import Button from "../components/Button.astro";
           video.playbackRate = Number((5 * Math.random()).toFixed(1));
           applyRandomPlaybackRate();
         },
-        Math.round(Math.random() * 750)
+        Math.round(Math.random() * 250)
       );
     };
 
@@ -55,6 +55,7 @@ import Button from "../components/Button.astro";
         Math.round(Math.random() * 500)
       );
     };
+
     applyRandomEffect([
       "",
       "invert",
