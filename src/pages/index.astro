@@ -69,7 +69,7 @@ import Button from "../components/Button.astro";
   const heroContent = document.getElementById("hero-content");
 
   // below logic hero content is centered with video as the hero is positioned absolute
-  const updateTranslation = () => {
+  const centerHeroContent = () => {
     if (heroContent && video) {
       const rect = video.getBoundingClientRect();
       const viewportHeight = window.innerHeight;
@@ -80,15 +80,15 @@ import Button from "../components/Button.astro";
         rect.top < 0 ? -rect.top : rect.bottom - viewportHeight
       );
 
-      // Apply the translation to the h2 element
-      heroContent.style.transform = `translateY(-${amountOutOfView * 0.5}px)`;
+      // Apply height to the h2 element
+      heroContent.style.height = `calc(100% - ${amountOutOfView}px)`;
     }
   };
 
   // Update the translation when scrolling or resizing
-  window.addEventListener("scroll", updateTranslation);
-  window.addEventListener("resize", updateTranslation);
-  updateTranslation(); // Initial call to set the translation
+  window.addEventListener("scroll", centerHeroContent);
+  window.addEventListener("resize", centerHeroContent);
+  centerHeroContent(); // Initial call to set the translation
 </script>
 
 <html lang="en">
@@ -156,10 +156,13 @@ import Button from "../components/Button.astro";
         <span class="hidden">Aki Gao</span>
       </h1>
       <h2
-        class="font-bold uppercase text-center text-[18px] md:text-[24px] py-[30px] md:py-[60px]
-      tracking-wider"
+        class="font-bold uppercase text-center text-lg md:text-2xl py-[30px] md:py-[60px] tracking-wider"
       >
-        高 (暁/晓)裕 | iknowhtml | (1993-2140)
+        高 (暁/晓)裕 | <a
+          href="https://www.youtube.com/watch?v=78R77LEd0j4&t=33s">iknowhtml</a
+        > | (<a href="https://bape.com">1993</a>-<a href="https://bitcoin.org"
+          >2140</a
+        >)
       </h2>
       <div class="relative h-full">
         <video
@@ -175,17 +178,12 @@ import Button from "../components/Button.astro";
       flex-col items-center justify-center inset-0 gap-4 object-cover"
         >
           <h2
-            class="uppercase text-white text-xl px-8 lg:p-0 md:text-3xl text-center"
-            style="text-shadow: -1px -1px 0
-      var(--text-shadow-color), 1px -1px 0 var(--text-shadow-color), -1px 1px 0
-      var(--text-shadow-color), 1px 1px 0 var(--text-shadow-color);"
+            class="uppercase text-white text-xl md:text-2xl px-8 font-bold tracking-wider lg:p-0 text-center"
           >
             "No one knows what it means, but it's provocative,"
           </h2>
           <div class="flex gap-4">
-            <Button href="https://www.linkedin.com/in/iknowhtml"
-              >LinkedIn</Button
-            >
+            <Button href="https://21ciaga.com/resume">Resume</Button>
             <Button href="https://www.github.com/iknowhtml">Github</Button>
           </div>
         </div>
