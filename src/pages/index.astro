@@ -26,13 +26,14 @@ import Button from "../components/Button.astro";
   const video = document.querySelector("video");
 
   if (video) {
+    const MAX_TIMEOUT_INTERVAL = 500;
     const applyRandomPlaybackRate = () => {
       setTimeout(
         () => {
           video.playbackRate = Number((5 * Math.random()).toFixed(1));
           applyRandomPlaybackRate();
         },
-        Math.round(Math.random() * 500)
+        Math.round(Math.random() * MAX_TIMEOUT_INTERVAL)
       );
     };
 
@@ -52,7 +53,7 @@ import Button from "../components/Button.astro";
 
           applyRandomEffect(effects, lastRandomEffect);
         },
-        Math.round(Math.random() * 500)
+        Math.round(Math.random() * MAX_TIMEOUT_INTERVAL)
       );
     };
 
@@ -67,6 +68,7 @@ import Button from "../components/Button.astro";
 
   const heroContent = document.getElementById("hero-content");
 
+  // below logic hero content is centered with video as the hero is positioned absolute
   const updateTranslation = () => {
     if (heroContent && video) {
       const rect = video.getBoundingClientRect();
