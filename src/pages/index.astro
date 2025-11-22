@@ -1,5 +1,6 @@
 ---
 import Button from "../components/Button.astro";
+import NavLink from "../components/NavLink.astro";
 ---
 
 <style>
@@ -11,6 +12,12 @@ import Button from "../components/Button.astro";
     font-family: "BB";
     src: url("/fonts/BB-CondBold.woff2") format("woff2");
     font-weight: bold;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "BB-Regular";
+    font-weight: 400;
     font-style: normal;
   }
 
@@ -146,74 +153,42 @@ import Button from "../components/Button.astro";
   </head>
   <body>
     <main class="h-screen overflow-clip">
-      <style>
-        @font-face {
-          font-family: "BB-Regular";
-          font-weight: 400;
-          font-style: normal;
-        }
-        .nav-link {
-          font-size: 12px;
-          letter-spacing: 0.36px;
-          line-height: 15.6px;
-        }
-      </style>
       <header role="banner" class="relative bg-white">
         <div
           class="h-[45px] flex items-center justify-between px-4 border-b border-black"
         >
           <!-- Left: Navigation -->
           <nav class="flex items-center">
-            <ul class="hidden xl:flex items-center gap-6">
+            <ul class="hidden xl:flex items-center gap-0">
               <li>
-                <a
+                <NavLink
                   href="https://www.balenciaga.com/en-us/spring26all"
-                  class="nav-link uppercase hover:opacity-60 transition-opacity"
-                  >SPRING 26</a
-                >
+                  label="SPRING 26"
+                />
               </li>
               <li>
-                <button
-                  class="nav-link uppercase hover:opacity-60 transition-opacity"
-                  >GIFTS</button
-                >
+                <NavLink isButton={true} label="GIFTS" />
               </li>
               <li>
-                <button
-                  class="nav-link uppercase hover:opacity-60 transition-opacity"
-                  >FRAGRANCES</button
-                >
+                <NavLink isButton={true} label="FRAGRANCES" />
               </li>
               <li>
-                <button
-                  class="nav-link uppercase hover:opacity-60 transition-opacity"
-                  >BAGS</button
-                >
+                <NavLink isButton={true} label="BAGS" />
               </li>
               <li>
-                <button
-                  class="nav-link uppercase hover:opacity-60 transition-opacity"
-                  >WOMEN</button
-                >
+                <NavLink isButton={true} label="WOMEN" />
               </li>
               <li>
-                <button
-                  class="nav-link uppercase hover:opacity-60 transition-opacity"
-                  >MEN</button
-                >
+                <NavLink isButton={true} label="MEN" />
               </li>
               <li>
-                <a
+                <NavLink
                   href="https://www.balenciaga.com/en-us/couture"
-                  class="nav-link uppercase hover:opacity-60 transition-opacity"
-                  >COUTURE</a
-                >
+                  label="COUTURE"
+                />
               </li>
               <li>
-                <button
-                  class="nav-link uppercase hover:opacity-60 transition-opacity"
-                  >EXPLORE</button
-                >
+                <NavLink isButton={true} label="EXPLORE" />
               </li>
             </ul>
           </nav>
@@ -234,24 +209,21 @@ import Button from "../components/Button.astro";
           <div class="flex items-center">
             <ul class="flex items-center gap-0">
               <li class="hidden xl:block">
-                <a
+                <NavLink
                   href="https://www.balenciaga.com/en-us/client-service"
-                  class="nav-link uppercase hover:opacity-60 transition-opacity px-3 py-3"
-                  >CLIENT SERVICES</a
-                >
+                  label="CLIENT SERVICES"
+                  variant="secondary"
+                />
               </li>
               <li class="hidden xl:block">
-                <a
+                <NavLink
                   href="https://www.balenciaga.com/en-us/login"
-                  class="nav-link uppercase hover:opacity-60 transition-opacity px-3 py-3"
-                  >LOGIN</a
-                >
+                  label="LOGIN"
+                  variant="secondary"
+                />
               </li>
               <li>
-                <button
-                  class="px-3 py-3 hover:opacity-60 transition-opacity"
-                  aria-label="Search"
-                >
+                <NavLink isButton={true} ariaLabel="Search" isIcon={true}>
                   <!-- Minimalist magnifying glass icon -->
                   <svg
                     width="16"
@@ -273,13 +245,13 @@ import Button from "../components/Button.astro";
                       stroke-width="1.5"
                       stroke-linecap="round"></path>
                   </svg>
-                </button>
+                </NavLink>
               </li>
               <li>
-                <a
+                <NavLink
                   href="https://www.balenciaga.com/en-us/wishlist/saved-items"
-                  class="px-3 py-3 hover:opacity-60 transition-opacity flex items-center"
-                  aria-label="Saved items"
+                  ariaLabel="Saved items"
+                  isIcon={true}
                 >
                   <!-- Minimalist bookmark/flag icon -->
                   <svg
@@ -295,13 +267,13 @@ import Button from "../components/Button.astro";
                       stroke-width="1.5"
                       fill="none"></path>
                   </svg>
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a
+                <NavLink
                   href="https://www.balenciaga.com/en-us/cart"
-                  class="px-3 py-3 hover:opacity-60 transition-opacity flex items-center"
-                  aria-label="Cart"
+                  ariaLabel="Cart"
+                  isIcon={true}
                 >
                   <!-- Minimalist shopping bag icon -->
                   <svg
@@ -322,7 +294,7 @@ import Button from "../components/Button.astro";
                       stroke-width="1.5"
                       fill="none"></path>
                   </svg>
-                </a>
+                </NavLink>
               </li>
             </ul>
           </div>

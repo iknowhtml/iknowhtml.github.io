@@ -1,0 +1,44 @@
+---
+export interface NavLinkProps {
+  href?: string;
+  label?: string;
+  ariaLabel?: string;
+  isButton?: boolean;
+  isIcon?: boolean;
+  variant?: "primary" | "secondary";
+}
+
+const {
+  href,
+  label,
+  ariaLabel,
+  isButton = false,
+  isIcon = false,
+  variant = "primary",
+} = Astro.props;
+
+// Match Balenciaga.com exact styles
+const classes = [
+  "hover:opacity-60 transition-opacity inline-flex items-center",
+  label && "text-xs font-normal uppercase",
+  label &&
+    (variant === "secondary"
+      ? "tracking-[0.12px] leading-[15.6px]" // CLIENT SERVICES, LOGIN
+      : "tracking-[0.36px] leading-[15.6px]"), // Main nav items
+  label && "px-2", // Always 0px 8px padding for text links
+  isIcon && !label && "px-3 py-3", // Icon-only buttons get more padding
+]
+  .filter(Boolean)
+  .join(" ");
+
+const Component = isButton ? "button" : "a";
+---
+
+<Component
+  class={classes}
+  href={!isButton ? href : undefined}
+  aria-label={ariaLabel}
+>
+  <slot />
+  {label}
+</Component>
