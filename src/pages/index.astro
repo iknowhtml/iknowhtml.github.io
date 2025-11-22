@@ -17,6 +17,86 @@ import Button from "../components/Button.astro";
   :root {
     --text-shadow-color: rgba(114, 117, 120, 0.1);
   }
+
+  /* Glitch effect animation */
+  @keyframes glitch {
+    0%,
+    100% {
+      clip-path: inset(0 0 100% 0);
+      transform: translate(0);
+    }
+    10% {
+      clip-path: inset(80% 0 10% 0);
+      transform: translate(-2px, 2px);
+    }
+    20% {
+      clip-path: inset(20% 0 60% 0);
+      transform: translate(2px, -2px);
+    }
+    30% {
+      clip-path: inset(50% 0 30% 0);
+      transform: translate(-1px, 1px);
+    }
+    40% {
+      clip-path: inset(10% 0 80% 0);
+      transform: translate(1px, -1px);
+    }
+    50% {
+      clip-path: inset(40% 0 40% 0);
+      transform: translate(-2px, 0);
+    }
+    60% {
+      clip-path: inset(70% 0 20% 0);
+      transform: translate(0, 2px);
+    }
+    70% {
+      clip-path: inset(30% 0 50% 0);
+      transform: translate(2px, 1px);
+    }
+    80% {
+      clip-path: inset(60% 0 30% 0);
+      transform: translate(-1px, -2px);
+    }
+    90% {
+      clip-path: inset(15% 0 70% 0);
+      transform: translate(1px, 0);
+    }
+  }
+
+  .glitch-effect {
+    position: relative;
+    animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+  }
+
+  .glitch-effect::before,
+  .glitch-effect::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    background-image: inherit;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8;
+    mix-blend-mode: screen;
+  }
+
+  .glitch-effect::before {
+    animation: glitch 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite reverse;
+    clip-path: inset(0 0 60% 0);
+    transform: translate(-2px, -1px);
+    filter: hue-rotate(90deg) saturate(1.5);
+  }
+
+  .glitch-effect::after {
+    animation: glitch 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+    clip-path: inset(60% 0 0 0);
+    transform: translate(2px, 1px);
+    filter: hue-rotate(-90deg) contrast(1.2);
+  }
 </style>
 
 <script>
@@ -95,14 +175,16 @@ import Button from "../components/Button.astro";
       name="viewport"
       content="width=device-width, height=device-height, initial-scale=1"
     />
-    <title>高 (暁/晓)裕 | iknowhtml | (1993-2140) | Aki Gao | Xiaoyu Gao</title>
+    <title>
+      Aki Gao | 高 (暁/晓)裕 | iknowhtml | (1993-2140) | `we are Xp`
+    </title>
     <meta
       name="description"
-      content="Aki Gao is Staff Software Engineer with 8+ years of experience with a passion for solving difficult technical problems, delivering delightful products, and leading high performing engineering teams. Aki also ❤️s Balenciaga."
+      content="Aki Gao is Staff Software Engineer and Engineering Leader with 9+ years of experience building performant, scalable, and secure software systems in accessibility, web3/crypto and institutional digital asset management. Please notice me Balenciaga 🥺"
     />
     <meta
       name="keywords"
-      content="aki gao, aki, gao, xiaoyu, akihiro, xiaoyu gao, staff, software engineer, web3, blockchain, cryptocurrency, balenciaga"
+      content="aki gao, aki, gao, xiaoyu, akihiro, xiaoyu gao, staff software engineer, engineering leader, accessibility, web3, defi, degen,blockchain, institutional, custody, bitcoin, crypto, cryptocurrency, bitcoin, balenciaga, xp, we are xp, experience platform team"
     />
     <link
       rel="icon"
@@ -144,47 +226,230 @@ import Button from "../components/Button.astro";
   </head>
   <body>
     <main class="h-screen overflow-clip">
-      <h1
-        class="font-bold
-      uppercase text-[22px] py-[5px] text-center tracking-wider border-b-[1px]
-      border-b-black"
-      >
-        <a href="https://www.balenciaga.com/">21ciaga</a>
-        <span class="hidden">Aki Gao</span>
-      </h1>
-      <h2
-        class="font-bold uppercase text-center text-lg md:text-2xl py-[30px] md:py-[60px] tracking-wider"
-      >
-        高 (暁/晓)裕 | <a
-          href="https://www.youtube.com/watch?v=78R77LEd0j4&t=33s">iknowhtml</a
-        > | (<a href="https://bape.com">1993</a>-<a href="https://bitcoin.org"
-          >2140</a
-        >)
-      </h2>
-      <div class="relative h-full">
-        <video
-          src="/media/no-one-knows-what-it-means.webm"
-          autoplay
-          playsinline
-          loop
-          muted
-          class="h-full w-full object-cover"></video>
+      <style>
+        @font-face {
+          font-family: "BB-Regular";
+          font-weight: 400;
+          font-style: normal;
+        }
+        .nav-link {
+          font-size: 12px;
+          letter-spacing: 0.36px;
+          line-height: 15.6px;
+        }
+      </style>
+      <header role="banner" class="relative bg-white">
         <div
-          id="hero-content"
-          class="absolute flex
-      flex-col items-center justify-center inset-0 gap-4 object-cover"
+          class="h-[45px] flex items-center justify-between px-4 border-b border-black"
         >
-          <h2
-            class="uppercase text-white text-xl md:text-2xl px-8 font-bold tracking-wider lg:p-0 text-center"
+          <!-- Left: Navigation -->
+          <nav class="flex items-center">
+            <ul class="hidden xl:flex items-center gap-6">
+              <li>
+                <a
+                  href="https://www.balenciaga.com/en-us/spring26all"
+                  class="nav-link uppercase hover:opacity-60 transition-opacity"
+                  >SPRING 26</a
+                >
+              </li>
+              <li>
+                <button
+                  class="nav-link uppercase hover:opacity-60 transition-opacity"
+                  >GIFTS</button
+                >
+              </li>
+              <li>
+                <button
+                  class="nav-link uppercase hover:opacity-60 transition-opacity"
+                  >FRAGRANCES</button
+                >
+              </li>
+              <li>
+                <button
+                  class="nav-link uppercase hover:opacity-60 transition-opacity"
+                  >BAGS</button
+                >
+              </li>
+              <li>
+                <button
+                  class="nav-link uppercase hover:opacity-60 transition-opacity"
+                  >WOMEN</button
+                >
+              </li>
+              <li>
+                <button
+                  class="nav-link uppercase hover:opacity-60 transition-opacity"
+                  >MEN</button
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.balenciaga.com/en-us/couture"
+                  class="nav-link uppercase hover:opacity-60 transition-opacity"
+                  >COUTURE</a
+                >
+              </li>
+              <li>
+                <button
+                  class="nav-link uppercase hover:opacity-60 transition-opacity"
+                  >EXPLORE</button
+                >
+              </li>
+            </ul>
+          </nav>
+
+          <!-- Center: Logo -->
+          <div
+            class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
           >
-            "No one knows what it means, but it's provocative,"
-          </h2>
-          <div class="flex gap-4">
-            <Button href="https://21ciaga.com/resume">Resume</Button>
-            <Button href="https://www.github.com/iknowhtml">Github</Button>
+            <a
+              href="https://www.balenciaga.com/"
+              class="text-[16px] lg:text-[20px] font-bold uppercase tracking-[0.15em]"
+            >
+              21CIAGA
+            </a>
+          </div>
+
+          <!-- Right: Utility Links -->
+          <div class="flex items-center">
+            <ul class="flex items-center gap-0">
+              <li class="hidden xl:block">
+                <a
+                  href="https://www.balenciaga.com/en-us/client-service"
+                  class="nav-link uppercase hover:opacity-60 transition-opacity px-3 py-3"
+                  >CLIENT SERVICES</a
+                >
+              </li>
+              <li class="hidden xl:block">
+                <a
+                  href="https://www.balenciaga.com/en-us/login"
+                  class="nav-link uppercase hover:opacity-60 transition-opacity px-3 py-3"
+                  >LOGIN</a
+                >
+              </li>
+              <li>
+                <button
+                  class="px-3 py-3 hover:opacity-60 transition-opacity"
+                  aria-label="Search"
+                >
+                  <!-- Minimalist magnifying glass icon -->
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle
+                      cx="6.5"
+                      cy="6.5"
+                      r="5.75"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      fill="none"></circle>
+                    <path
+                      d="M10.5 10.5L14.5 14.5"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"></path>
+                  </svg>
+                </button>
+              </li>
+              <li>
+                <a
+                  href="https://www.balenciaga.com/en-us/wishlist/saved-items"
+                  class="px-3 py-3 hover:opacity-60 transition-opacity flex items-center"
+                  aria-label="Saved items"
+                >
+                  <!-- Minimalist bookmark/flag icon -->
+                  <svg
+                    width="14"
+                    height="18"
+                    viewBox="0 0 14 18"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1 1V17L7 13L13 17V1H1Z"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      fill="none"></path>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.balenciaga.com/en-us/cart"
+                  class="px-3 py-3 hover:opacity-60 transition-opacity flex items-center"
+                  aria-label="Cart"
+                >
+                  <!-- Minimalist shopping bag icon -->
+                  <svg
+                    width="16"
+                    height="18"
+                    viewBox="0 0 16 18"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1 5H15V17H1V5Z"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      fill="none"></path>
+                    <path
+                      d="M5 5V4C5 2.34315 6.34315 1 8 1C9.65685 1 11 2.34315 11 4V5"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      fill="none"></path>
+                  </svg>
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
-      </div>
-    </main>
-  </body>
+      </header>
+      <h2
+        class="font-bold text-center text-lg md:text-2xl py-[30px] md:py-[60px] tracking-wider relative z-50"
+      >
+        <a href="https://www.linkedin.com/in/iknowhtml/">高 (暁/晓)裕</a> | <a
+          href="https://grfxp.myshopify.com/cdn/shop/products/tv-silicon_valley-2014_-erlich-tj_miller-tshirts-s01e01-i_know_html_tshirt_01-595x335_1024x1024.jpg?v=1520449721"
+          >iknowhtml</a
+        > | (<a href="https://bape.com">1993</a>-<a href="https://bitcoin.org"
+          >2140)</a
+        > |
+        <a href="https://www.ykkfastening.com/">YKK</a>(af) |
+        <a
+          class="normal-case"
+          href="https://www.youtube.com/watch?v=RR4KyR2HKr8&t=110s"
+          >`we are <a href="https://x.com/21ciaga">X</a>p`</a
+        >
+      </h2>
+      <a href="/media/hot-dog-girl-marathon.png">
+        <div class="relative h-full overflow-hidden" data-hero-wrapper>
+          <video
+            src="/media/no-one-knows-what-it-means.webm"
+            autoplay
+            playsinline
+            loop
+            muted
+            class="h-full w-full object-cover"></video>
+          <div
+            id="hero-content"
+            class="absolute flex
+      flex-col items-center justify-center inset-0 gap-4 object-cover z-20"
+          >
+            <h2
+              class="uppercase text-white text-xl md:text-2xl px-8 font-bold tracking-wider lg:p-0 text-center"
+            >
+              "No one knows what it means, but it's provocative,"
+            </h2>
+            <div class="flex gap-4">
+              <Button href="https://21ciaga.com/resume">Resume</Button>
+              <Button href="https://www.github.com/iknowhtml">Github</Button>
+            </div>
+          </div>
+        </div>
+      </a>
+    </main></body
+  >
 </html>
