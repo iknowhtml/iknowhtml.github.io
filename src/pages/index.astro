@@ -30,11 +30,11 @@ import NavLink from "../components/NavLink.astro";
   const video = document.querySelector("video");
 
   if (video) {
-    const MAX_TIMEOUT_INTERVAL = 500;
+    const MAX_TIMEOUT_INTERVAL = 420;
     const applyRandomPlaybackRate = () => {
       setTimeout(
         () => {
-          video.playbackRate = Number((5 * Math.random()).toFixed(1));
+          video.playbackRate = Number((6.7 * Math.random()).toFixed(1));
           applyRandomPlaybackRate();
         },
         Math.round(Math.random() * MAX_TIMEOUT_INTERVAL)
@@ -107,11 +107,11 @@ import NavLink from "../components/NavLink.astro";
     </title>
     <meta
       name="description"
-      content="Aki Gao is Staff Software Engineer and Engineering Leader with 9+ years of experience building performant, scalable, and secure software systems in accessibility, web3/crypto and institutional digital asset management. Please notice me Balenciaga 🥺"
+      content="Aki Gao is Staff Software Engineer and Engineering Leader with 9+ years of experience building performant, scalable, and secure software libaries & systems in accessibility, web3/crypto and institutional digital asset management. Please notice me Balenciaga 🙏🥺"
     />
     <meta
       name="keywords"
-      content="aki gao, aki, gao, xiaoyu, akihiro, xiaoyu gao, staff software engineer, engineering leader, accessibility, web3, defi, degen,blockchain, institutional, custody, bitcoin, crypto, cryptocurrency, bitcoin, balenciaga, xp, we are xp, experience platform team"
+      content="aki gao, aki, gao, xiaoyu, akihiro, xiaoyu gao, staff software engineer, engineering leader, accessibility, web3, defi, degen, blockchain, institutional, custody, bitcoin, crypto, cryptocurrency, bitcoin, balenciaga, xp, we are xp, experience platform team"
     />
     <link
       rel="icon"
@@ -167,19 +167,19 @@ import NavLink from "../components/NavLink.astro";
                 />
               </li>
               <li>
-                <NavLink isButton={true} label="GIFTS" />
+                <NavLink isButton label="GIFTS" />
               </li>
               <li>
-                <NavLink isButton={true} label="FRAGRANCES" />
+                <NavLink isButton label="FRAGRANCES" />
               </li>
               <li>
-                <NavLink isButton={true} label="BAGS" />
+                <NavLink isButton label="BAGS" />
               </li>
               <li>
-                <NavLink isButton={true} label="WOMEN" />
+                <NavLink isButton label="WOMEN" />
               </li>
               <li>
-                <NavLink isButton={true} label="MEN" />
+                <NavLink isButton label="MEN" />
               </li>
               <li>
                 <NavLink
@@ -188,7 +188,7 @@ import NavLink from "../components/NavLink.astro";
                 />
               </li>
               <li>
-                <NavLink isButton={true} label="EXPLORE" />
+                <NavLink isButton label="EXPLORE" />
               </li>
             </ul>
           </nav>
@@ -223,7 +223,7 @@ import NavLink from "../components/NavLink.astro";
                 />
               </li>
               <li>
-                <NavLink isButton={true} ariaLabel="Search" isIcon={true}>
+                <NavLink isButton ariaLabel="Search" isIcon={true}>
                   <!-- Minimalist magnifying glass icon -->
                   <svg
                     width="16"
